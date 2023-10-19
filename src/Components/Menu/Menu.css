@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: #fff;
+  background-color: #c79e52;;
 }
 
 .navbar h2 a {
@@ -14,4 +14,8 @@
   display: flex;
   gap: 1rem;
 
+}
+
+ul li::marker{
+  font-size: 0;
 }

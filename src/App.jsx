@@ -9,16 +9,20 @@ import Cadastro from "./Components/Paginas/Cadastro/Cadastro";
 function App() {
   return (
     <BrowserRouter>
-      <Menu />
-      <Routes>
-        <Route>
-          <Route path="/" element={<Layout />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-        </Route>
-        <Route path="*" element={<div>Página não encontrada </div>} />
-      </Routes>
+      <div className="App">
+        <Menu />
+        <div className="container">
+          <Routes>
+            <Route>
+              <Route path="/" element={<Layout />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/cadastro" element={<Cadastro />} />
+            </Route>
+            <Route path="*" element={<div>Página não encontrada </div>} />
+          </Routes>
+        </div>
+      </div>
     </BrowserRouter>
   );
 }
