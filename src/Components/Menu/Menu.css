@@ -3,7 +3,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: #c79e52;;
+  background-color: #24506b;
+}
+
+.logo-img {
+  width: 125px;
 }
 
 .navbar h2 a {
@@ -18,4 +22,31 @@
 
 ul li::marker{
   font-size: 0;
+}
+
+ul li:first-child{
+  border: solid 2px #fff;
+  border-radius: 8px;
+  width: 105px;
+  padding: 8px;
+}
+
+ul li:last-child{
+  background-color: #c8edeb;
+  border: solid 2px #fff;
+  border-radius: 8px;
+  width: 105px;
+  padding: 8px;
+  color: #24506b;
+}
+
+ li a{
+  font-weight: 500;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-decoration: underline;
 }

@@ -5,9 +5,14 @@ const Menu = () => {
   return (
     <header>
       <nav className="navbar">
-        <h2>
-          <Link to={"/"}>Logo :D</Link>
-        </h2>
+        <div className="logo-img">
+          <Link to={"/"}>
+            <img
+              src="public/images/LogoBarraDePesquisa.svg"
+              alt="image da logo"
+            />
+          </Link>
+        </div>
         <ul>
           <li>
             <Link to="/login">Login</Link>
