@@ -30,6 +30,72 @@ const LandingPage = () => {
             />
           </div>
         </div>
+        <div className="cards-container">
+          <a href="https://www.google.com/">
+            <div className="card">
+              <div className="card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Imagem card 1"
+                />
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                reiciendis nemo vitae, a dolorum ad recusandae, cumque,
+                voluptate similique et molestiae blanditiis explicabo? Eum
+                praesentium deleniti cupiditate sapiente recusandae quo.
+              </p>
+            </div>
+          </a>
+          <a href="https://www.google.com/">
+            <div className="card">
+              <div className="card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Imagem card 1"
+                />
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                reiciendis nemo vitae, a dolorum ad recusandae, cumque,
+                voluptate similique et molestiae blanditiis explicabo? Eum
+                praesentium deleniti cupiditate sapiente recusandae quo.
+              </p>
+            </div>
+          </a>
+          <a href="https://www.google.com/">
+            <div className="card">
+              <div className="card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Imagem card 1"
+                />
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                reiciendis nemo vitae, a dolorum ad recusandae, cumque,
+                voluptate similique et molestiae blanditiis explicabo? Eum
+                praesentium deleniti cupiditate sapiente recusandae quo.
+              </p>
+            </div>
+          </a>
+          <a href="https://www.google.com/">
+            <div className="card">
+              <div className="card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Imagem card 1"
+                />
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                reiciendis nemo vitae, a dolorum ad recusandae, cumque,
+                voluptate similique et molestiae blanditiis explicabo? Eum
+                praesentium deleniti cupiditate sapiente recusandae quo.
+              </p>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
   );

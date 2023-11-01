@@ -6,12 +6,16 @@ const Footer = () => {
       <div className="content-footer">
         <ul>
           <li>
-            <a href="https://www.facebook.com">
+            <a target="_blank" rel="noreferrer" href="https://www.facebook.com">
               <img src="public/images/facebook-icon.png" alt="icone Facebook" />
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.instagram.com"
+            >
               <img
                 src="public/images/instagram-icon.png"
                 alt="icone Instagram"
@@ -19,7 +23,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="https://www.github.com">
+            <a target="_blank" rel="noreferrer" href="https://www.github.com">
               <img src="public/images/github-logo.png" alt="logo gitHub" />
             </a>
           </li>

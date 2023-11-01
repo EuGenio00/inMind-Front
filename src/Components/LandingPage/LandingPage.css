@@ -29,3 +29,33 @@
   border-radius: 12px;
   border: 0.2rem solid #009b87;
 }
+
+.cards-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: center;
+  padding: 70px 0 40px 0;
+}
+
+.card {
+  display: grid;
+  justify-content: center;
+  width: 200px;
+  border-radius: 12px;
+  border: 1.6px solid #24506b;
+}
+
+.card img{
+  width: 100%;
+  height: 155px;
+  border-radius: 12px;
+}
+
+.card p{
+  color: #000;
+  text-align: justify;
+  font-size: 14px;
+  margin: 10px 0 0;
+}
