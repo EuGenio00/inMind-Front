@@ -1,9 +1,16 @@
+header{
+  max-width: 100%;
+  background-color: #24506b;
+  display: flex;
+  justify-content: center;
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: #24506b;
+  width: 1252px;
 }
 
 .logo-img {
@@ -24,14 +31,14 @@ ul li::marker{
   font-size: 0;
 }
 
-ul li:first-child{
+.navbar ul li:first-child{
   border: solid 2px #fff;
   border-radius: 8px;
   width: 105px;
   padding: 8px;
 }
 
-ul li:last-child{
+.navbar ul li:last-child{
   background-color: #c8edeb;
   border: solid 2px #fff;
   border-radius: 8px;
@@ -40,8 +47,8 @@ ul li:last-child{
   color: #24506b;
 }
 
- li a{
-  font-weight: 500;
+.navbar ul li a{
+  font-weight: 700;
   color: #fff;
   font-size: 14px;
   display: flex;

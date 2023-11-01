@@ -1,0 +1,25 @@
+.footer-container{
+  width: 100%;
+  max-height: 80px;
+  height: 100%;
+  background-color: #24506b;
+  display: flex;
+  justify-content: center;
+}
+
+.content-footer {
+  width: 1252px;
+  padding: 1rem 2rem;
+}
+
+.content-footer ul{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  height: auto;
+  margin: 0;
+}
+
+.content-footer img{
+  width: 45px;
+}
