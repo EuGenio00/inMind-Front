@@ -1,0 +1,31 @@
+
+.landing-container{
+  width: 100%;
+  padding: 1.5rem 2rem;
+}
+
+.landing-descricao{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.landing-descricao p{
+  width: 40%;
+  font-size: 26px;
+  color: #000;
+  margin: 0;
+  text-align: justify;
+}
+
+.foto-destaque{
+  width: 35%;
+}
+
+.foto-destaque img{
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 0.2rem solid #009b87;
+}
