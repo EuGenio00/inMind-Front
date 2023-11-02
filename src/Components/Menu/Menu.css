@@ -31,10 +31,6 @@ header{
 
 }
 
-.navbar ul li{
-  border-bottom: 2px solid #fff;
-}
-
 ul li::marker{
   font-size: 0;
 }
@@ -52,7 +48,7 @@ ul li::marker{
   border-radius: 8px;
   width: 105px;
   padding: 8px;
-  color: #24506b;
+  /* color: #24506b !important; */
 }
 
 .navbar ul li a{
@@ -65,3 +61,7 @@ ul li::marker{
   justify-content: center;
   text-decoration: underline;
 }
+
+/* .navbar ul li a:not(:first-child){
+  color: #24506b;
+} */
