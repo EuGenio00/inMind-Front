@@ -43,8 +43,9 @@
   display: grid;
   justify-content: center;
   width: 200px;
-  border-radius: 12px;
+  border-radius: 30px;
   border: 1.6px solid #24506b;
+  background-color: #c8edeb;
 }
 
 .card img{

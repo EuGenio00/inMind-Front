@@ -31,11 +31,15 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="cards-container">
-          <a href="https://www.google.com/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://hospitalsaomatheus.com.br/blog/sindrome-do-panico-o-que-e-causas-sintomas-e-tratamento/"
+          >
             <div className="card">
               <div className="card-image">
                 <img
-                  src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="https://media.istockphoto.com/id/1309798024/pt/foto/close-up-unhappy-woman-suffering-from-strong-headache-and-dizziness.jpg?s=1024x1024&w=is&k=20&c=v6BjA_u2nIwbONwulPEZ0JHK9fRW91j67WafvXFzx0w="
                   alt="Imagem card 1"
                 />
               </div>
@@ -47,12 +51,16 @@ const LandingPage = () => {
               </p>
             </div>
           </a>
-          <a href="https://www.google.com/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://hospitalsantamonica.com.br/depressao-sintomas-tratamento-diagnostico-e-prevencao/"
+          >
             <div className="card">
               <div className="card-image">
                 <img
-                  src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Imagem card 1"
+                  src="https://images.pexels.com/photos/3209136/pexels-photo-3209136.jpeg"
+                  alt="Imagem card 2"
                 />
               </div>
               <p>
@@ -63,12 +71,16 @@ const LandingPage = () => {
               </p>
             </div>
           </a>
-          <a href="https://www.google.com/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://hospitalsantamonica.com.br/saude-mental/ansiedade/"
+          >
             <div className="card">
               <div className="card-image">
                 <img
-                  src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Imagem card 1"
+                  src="https://media.istockphoto.com/id/1371458650/pt/foto/studio-shot-of-a-young-woman-experiencing-mental-anguish-and-screaming-against-a-black.jpg?s=1024x1024&w=is&k=20&c=uZbA3idZsuVGloGRtr8EW_8QNLEbrL8SX_csGXjiQ9M="
+                  alt="Imagem card 3"
                 />
               </div>
               <p>
@@ -79,12 +91,16 @@ const LandingPage = () => {
               </p>
             </div>
           </a>
-          <a href="https://www.google.com/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.ufpe.br/agencia/noticias/-/asset_publisher/dlhi8nsrz4hK/content/especialista-do-hc-explica-o-transtorno-afetivo-bipolar-doenca-que-tem-30-de-marco-como-seu-dia-mundial/40615"
+          >
             <div className="card">
               <div className="card-image">
                 <img
-                  src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Imagem card 1"
+                  src="https://images.pexels.com/photos/6382648/pexels-photo-6382648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt="Imagem card 4"
                 />
               </div>
               <p>
