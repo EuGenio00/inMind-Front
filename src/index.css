@@ -25,10 +25,6 @@ a:hover {
   color: #24506b;
 }
 
-input:hover{
-  border: transparent;
-}
-
 body {
   padding: 0;
   margin: 0;
