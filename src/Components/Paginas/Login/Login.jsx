@@ -1,20 +1,40 @@
+import { Link } from "react-router-dom";
 import "./Login.css";
+import Botao from "../../Button/Button";
 
 const Login = () => {
+  const aoEnviar = (evento) => {
+    evento.preventDefault();
+  };
+
   return (
     <main>
-      <div>
-        <h2>Faça seu login em nosso site: </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Exercitationem repellendus, saepe, ut aperiam odit veritatis ab labore
-          quam nostrum ipsum unde reiciendis doloribus. Eaque aliquid possimus
-          eius recusandae sunt itaque. Earum sed dignissimos nulla adipisci
-          dolor facilis, vel odio aut exercitationem, vero cumque asperiores
-          incidunt aliquid aperiam! Sit, perspiciatis, enim nulla a inventore
-          praesentium fugit expedita assumenda qui modi vel.
-        </p>
-      </div>
+      <section className="cadastroPage-container">
+        <div className="cadastroPage-content">
+          <div className="formulario-container">
+            <h2>
+              Log<span>IN</span>
+            </h2>
+            <form action="" onSubmit={aoEnviar}>
+              <input type="email" placeholder="E-mail: " />
+              <input type="password" placeholder="*Senha: " />
+              <Botao textoBotao="Entrar" />
+            </form>
+            <p>
+              Ainda não é cadastrado? Cadastre-se{" "}
+              <span>
+                <Link to="/cadastro">aqui.</Link>
+              </span>
+            </p>
+          </div>
+          <div className="logoPrincipal-content">
+            <img
+              src="public/images/LogoPrincipal.svg"
+              alt="Foto da Logo principal"
+            />
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
