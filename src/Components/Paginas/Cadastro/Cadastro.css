@@ -17,7 +17,7 @@
   max-width: 100%;
 }
 
-.formulario-container, .logoPrincipal-content {
+.formulario-container {
   width: 50%;
 }
 .formulario-container {
@@ -55,16 +55,4 @@
 .formulario-container form input::placeholder{
   font-family: 'IBM Plex Mono', monospace;
   color: #3d3d3d;
-}
-
-.logoPrincipal-content{
-  display: flex;
-  justify-content: center;
-  margin: 60px;
-}
-
-.logoPrincipal-content img{
-  width: 100%;
-  height: auto;
-  max-width: 435px;
 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Login.css";
 import Botao from "../../Button/Button";
+import ImageLogo from "../../ImageLogo/ImageLogo";
 
 const Login = () => {
   const aoEnviar = (evento) => {
@@ -27,12 +28,7 @@ const Login = () => {
               </span>
             </p>
           </div>
-          <div className="logoPrincipal-content">
-            <img
-              src="public/images/LogoPrincipal.svg"
-              alt="Foto da Logo principal"
-            />
-          </div>
+          <ImageLogo />
         </div>
       </section>
     </main>
