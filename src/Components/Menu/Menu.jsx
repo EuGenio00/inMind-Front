@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./Menu.css";
 
 const Menu = () => {
-  
   return (
     <header>
       <nav className="navbar">
@@ -19,7 +18,7 @@ const Menu = () => {
             <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link to="/cadastro">Cadastre-se</Link>
+            <Link to="/cadastro">Cadastro</Link>
           </li>
         </ul>
       </nav>

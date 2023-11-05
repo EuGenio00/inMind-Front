@@ -1,0 +1,16 @@
+
+.cadastroPage-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1252px;
+}
+
+.formulario-content, .logoPrincipal-content {
+  width: 50%;
+}
+
+.logoPrincipal-content img{
+  width: 100%;
+  height: auto;
+}

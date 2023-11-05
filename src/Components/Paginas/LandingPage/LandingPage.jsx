@@ -2,8 +2,8 @@ import "./LandingPage.css";
 
 const LandingPage = () => {
   return (
-    <section>
-      <div className="landing-container">
+    <section className="landing-container">
+      <div className="content-landing">
         {/* <h3>- Conheça nossos benefícios -</h3> */}
         <div className="landing-descricao">
           <p>
