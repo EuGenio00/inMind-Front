@@ -30,6 +30,15 @@ header{
   gap: 1rem;
 
 }
+.navbar ul li:hover{
+  border-color: #24506b;
+  color: #24506b;
+  background-color: #f4fcff;
+}
+
+.navbar ul li a:hover{
+  color: #24506b;
+}
 
 ul li::marker{
   font-size: 0;

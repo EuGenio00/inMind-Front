@@ -1,16 +1,74 @@
 
 .cadastroPage-container {
-  display: flex;
-  flex-direction: row;
   width: 100%;
-  max-width: 1252px;
+  display: grid;
+  justify-content: center;
+  padding-bottom: 10em;
 }
 
-.formulario-content, .logoPrincipal-content {
+.cadastroPage-container h2{
+  font-size: 1.7em;
+}
+
+.cadastroPage-content {
+  display: flex;
+  flex-direction: row;
+  width: 1252px;
+  max-width: 100%;
+}
+
+.formulario-container, .logoPrincipal-content {
   width: 50%;
+}
+.formulario-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-container form{
+  border: 1.8px solid #24506b;
+  border-radius: 30px;
+  width: 100%;
+  display: grid;
+  gap: 35px;
+  background-color: #fff;
+  justify-content: center;
+  padding: 55px 0 30px 0;
+}
+
+.formulario-container p{
+  font-size: 0.9em;
+  padding: 10px;
+}
+
+.cadastroPage-container form input{
+  width: 380px;
+  background-color: #fff;
+  border: 1px solid #4e4351;
+  border-radius: 12px;
+  height: 40px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #3d3d3d;
+  padding-left: 10px;
+}
+
+.cadastroPage-container form input::placeholder{
+  font-family: 'IBM Plex Mono', monospace;
+  color: #3d3d3d;
+}
+
+/* .cadastroPage-container form input::placeholder:hover{
+  border-color: #24506b;
+} */
+
+.logoPrincipal-content{
+  display: flex;
+  justify-content: center;
+  margin: 60px;
 }
 
 .logoPrincipal-content img{
   width: 100%;
   height: auto;
+  max-width: 435px;
 }

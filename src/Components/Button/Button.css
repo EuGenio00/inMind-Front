@@ -1,19 +1,20 @@
 
 .botaoContent {
-  max-width: 100%;
+  /* max-width: 100%;
   width: 47.5%;
   margin: 20px 0 8px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; */
 }
 
 .botaoContent .botao {
-  width: 105px;
-  height: 38px;
-  border-radius: 10px;
-  border: transparent;
-  background-color: #0848a8;
+  border-color: #24506b;
+  background-color: #c8edeb;
+  color: #000;
+}
+
+.botaoContent .botao:hover{
+  border-color: #24506b;
+  background-color: #000;
   color: #fff;
-  font-weight: 400;
-  cursor: pointer;
 }
