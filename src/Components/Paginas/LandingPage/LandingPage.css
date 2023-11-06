@@ -1,26 +1,33 @@
+.landing-container {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
 
 .content-landing{
   width: 100%;
-  padding: 1.5rem 2rem;
+  padding: 2rem 0 2rem 0;
+  max-width: 1252px;
 }
 
 .landing-descricao{
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
 }
 
 .landing-descricao p{
-  width: 40%;
-  font-size: 26px;
+  width: 50%;
+  font-size: 22.5px;
   color: #3d3d3d;
   margin: 0;
   text-align: justify;
 }
 
 .foto-destaque{
-  width: 35%;
+  width: 45%;
 }
 
 .foto-destaque img{
