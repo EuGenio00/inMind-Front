@@ -3,6 +3,7 @@
   width: 100%;
   display: grid;
   justify-content: center;
+  padding-top: 2em;
   padding-bottom: 10em;
 }
 
