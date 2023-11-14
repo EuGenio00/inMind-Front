@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Cadastro.css";
-// import Footer from "../../Footer/Footer";
 import Botao from "../../Button/Button";
+import ImageLogo from "../../ImageLogo/ImageLogo";
 
 const Cadastro = () => {
+  const aoEnviar = (evento) => {
+    evento.preventDefault();
+  };
   return (
     <main>
       <section className="cadastroPage-container">
@@ -12,7 +15,7 @@ const Cadastro = () => {
             <h2>
               Cadastre-se <span>JÁ</span>!
             </h2>
-            <form action="">
+            <form action="" onSubmit={aoEnviar}>
               <input type="text" placeholder="Seu nome completo: " />
               <input type="email" placeholder="E-mail: " />
               <input type="password" placeholder="*Senha: " />
@@ -25,15 +28,9 @@ const Cadastro = () => {
               </span>
             </p>
           </div>
-          <div className="logoPrincipal-content">
-            <img
-              src="public/images/LogoPrincipal.svg"
-              alt="Foto da Logo principal"
-            />
-          </div>
+          <ImageLogo />
         </div>
       </section>
-      {/* <Footer /> */}
     </main>
   );
 };
