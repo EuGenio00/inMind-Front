@@ -23,7 +23,7 @@ const PsychologistResearch = () => {
         <div className="container-general">
 
                 <span className="out-arrow">
-                    <a href="/"><img src="inMind-Front/src/assets/seta-esquerda.png" alt="seta" /></a>
+                    <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
                 </span>
               <ul className="research-list">
                 <li>
