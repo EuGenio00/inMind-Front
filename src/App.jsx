@@ -5,9 +5,9 @@ import Home from "./Components/Paginas/Home/Home";
 import Menu from "./Components/Menu/Menu";
 import Login from "./Components/Paginas/Login/Login";
 import Cadastro from "./Components/Paginas/Cadastro/Cadastro";
-import AppointmentPsychologist from "./Components/Paginas/AppointmentPsychologist";
-import PsychologistResearch from "./Components/Paginas/PsychologistResearch";
-import Scheduling from "./Components/Paginas/PageScheduling";
+import AppointmentPsychologist from "./Components/Paginas/AppointmentPsychologist/AppointmentPsychologist";
+import PsychologistResearch from "./Components/Paginas/PsychologistResearch/PsychologistResearch";
+import Scheduling from "./Components/Paginas/PageScheduling/PageScheduling";
 
 function App() {
   return (
