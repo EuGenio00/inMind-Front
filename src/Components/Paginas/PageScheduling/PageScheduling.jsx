@@ -1,5 +1,6 @@
 
 import axios from "axios";
+import './PageScheduling.css'
 
 const Scheduling = () => {
 
@@ -25,7 +26,7 @@ const Scheduling = () => {
                     <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
                 </span>
               <ul className="research-list">
-                <li>
+                <li className="Scheduling">
                     <div className="card-research">
                       <span className="informations">
                         <input 
@@ -37,7 +38,7 @@ const Scheduling = () => {
                           <input 
                             type="text"
                             name="descricao"
-                            placeholder="Descrição"
+                            placeholder="dd/mm/aaaa - 00:00"
                             value=""
                             onChange=""
                           

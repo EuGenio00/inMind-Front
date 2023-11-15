@@ -1,6 +1,6 @@
 
 import axios from 'axios'
-
+import './PsychologistResearch.css'
 
 const PsychologistResearch = () => {
 
@@ -26,7 +26,7 @@ const PsychologistResearch = () => {
                     <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
                 </span>
               <ul className="research-list">
-                <li>
+                <li className='PsychologistResearch'>
                     <div className="card-research">
                       <span className="informations">
                         <input 
@@ -45,7 +45,7 @@ const PsychologistResearch = () => {
                           
                           />
                           <div className='avalietions'>
-                            <img src="" alt="estrela" />
+                            <img src="src/assets/estrela.png" alt="estrela" />
                             <span className='number-views'></span>
                           </div>
                         </div>
