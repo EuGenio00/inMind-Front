@@ -8,6 +8,7 @@ import Cadastro from "./Components/Paginas/Cadastro/Cadastro";
 import AppointmentPsychologist from "./Components/Paginas/AppointmentPsychologist/AppointmentPsychologist";
 import PsychologistResearch from "./Components/Paginas/PsychologistResearch/PsychologistResearch";
 import Scheduling from "./Components/Paginas/PageScheduling/PageScheduling";
+import ConsulationPage from "./Components/Paginas/ConsultationPage/ConsultationPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/agendamento" element={<AppointmentPsychologist />} />
               <Route path="/pesquisar-psicologo" element={<PsychologistResearch />} />
               <Route path="/agendados" element={<Scheduling />} />
+              <Route path="/consulta-aceita" element={<ConsulationPage />} />
             </Route>
             <Route path="*" element={<div>Página não encontrada </div>} />
           </Routes>

@@ -1,0 +1,53 @@
+.last-bloco{
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.ConsulationPage .card-research{
+    width: 450px;
+    padding: 10px;
+}
+
+.ConsulationPage .children .informations {
+    width: 80%;
+}
+
+.ConsulationPage .informations .input-appointmentDate input{
+    width: 155px;
+}
+
+.link-consulta{
+    display: flex;
+    flex-direction: column;
+}
+
+.link-consulta label {
+    font-size: 13px;
+}
+
+.ConsulationPage .input-appointmentDate label {
+    font-size: 13px;
+}
+
+.link-consulta a {
+    width: 215px;
+    height: 30px;
+    border: 2px solid #6b6b6b;
+    border-radius: 5px;
+}
+
+.ConsulationPage .input-appointmentDate{
+    display: flex;
+    flex-direction: column;
+}
+
+.ConsulationPage .informations .foto-consultation {
+    display: flex;
+    align-items: center;
+    border: 3px solid #009b87;
+    border-radius: 15px;
+    height: 120px;
+    width: 25%;
+    justify-content: center;
+}

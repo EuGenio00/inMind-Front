@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios'
+import './AppointmentPsychologist.css'
 
 
 const AppointmentPsychologist = () => {
@@ -61,7 +62,7 @@ const AppointmentPsychologist = () => {
 
 
     return (
-        <div className="container-general">
+        <div className="container-general AppointmentPsychologist">
 
           <div className="research-list">
             <span className="out-arrow">
@@ -70,6 +71,8 @@ const AppointmentPsychologist = () => {
             <div className="card-research">
               <div className="children">
                 <span className="informations">
+                  <div className='input-agendamento'>
+                  <label htmlFor="name">Name:</label>
                   <input 
                     type="text" 
                     name="name"
@@ -77,6 +80,7 @@ const AppointmentPsychologist = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                   />
+                  <label htmlFor="age">Idade:</label>
                   <input
                     type="text" 
                     name="age"
@@ -85,6 +89,7 @@ const AppointmentPsychologist = () => {
                     onChange={handleInputChange}
                   
                   />
+                  </div>
                   {showText && <p onClick={handlePhotoClick}>Foto</p>}
                   {!showText && (
                     <>
@@ -94,20 +99,26 @@ const AppointmentPsychologist = () => {
                   )}
                 </span>
                 <span className="informations">
-                <textarea
-                  name="description"
-                  placeholder="Descrição"
-                  value={formData.description}
-                  onChange={handleInputChange}
-                />
-                <input
-                  type="text" 
-                  name="appointmentDate"
-                  placeholder="(dd/mm/aaaa)"
-                  value={formData.appointmentDate}
-                  onChange={handleInputChange}
-                
-                />
+                <div className='input-description'>
+                  <label htmlFor="description">Sobre:</label>
+                  <textarea
+                    name="description"
+                    placeholder="Descrição"
+                    value={formData.description}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className='input-appointmentDate'>
+                  <label htmlFor="appointmentDate">Data de agendamento:</label>
+                  <input
+                    type="text" 
+                    name="appointmentDate"
+                    placeholder="dd/mm/aaaa"
+                    value={formData.appointmentDate}
+                    onChange={handleInputChange}
+                  
+                  />
+                </div>
                 <button onClick={uploadAppointment}>Finalizar o agendamento</button>
                 </span>
                   
