@@ -5,6 +5,10 @@ import Home from "./Components/Paginas/Home/Home";
 import Menu from "./Components/Menu/Menu";
 import Login from "./Components/Paginas/Login/Login";
 import Cadastro from "./Components/Paginas/Cadastro/Cadastro";
+import AppointmentPsychologist from "./Components/Paginas/AppointmentPsychologist/AppointmentPsychologist";
+import PsychologistResearch from "./Components/Paginas/PsychologistResearch/PsychologistResearch";
+import Scheduling from "./Components/Paginas/PageScheduling/PageScheduling";
+import ConsulationPage from "./Components/Paginas/ConsultationPage/ConsultationPage";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/agendamento" element={<AppointmentPsychologist />} />
+              <Route path="/pesquisar-psicologo" element={<PsychologistResearch />} />
+              <Route path="/agendados" element={<Scheduling />} />
+              <Route path="/consulta-aceita" element={<ConsulationPage />} />
             </Route>
             <Route path="*" element={<div>Página não encontrada </div>} />
           </Routes>
