@@ -1,0 +1,108 @@
+.research-list {
+    height: 100%;
+}
+
+.children{
+    width: 100%;
+}
+
+.children .informations {
+    border: none;
+    height: auto;
+    width: 85%;
+    padding: 0;
+    margin: auto;
+}
+
+.children .informations:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-description label:first-child {
+    display: flex;   
+}
+
+.informations p {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 3px solid #009b87;
+    border-radius: 15px;
+    height: 120px;
+    width: 25%;
+    justify-content: center;
+}
+
+.input-agendamento{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-agendamento label{
+    display: flex;
+}
+
+.informations .input-agendamento input {
+    border: 2px solid #6b6b6b;
+    height: 30px;
+    width: 200px;
+}
+
+.AppointmentPsychologist .card-research{
+    width: 400px;
+    padding: 10px;
+}
+
+.input-description textarea {
+    width: 98%;
+    height: 80px;
+    border: 2px solid #6b6b6b;
+    border-radius: 5px;
+}
+
+.input-description textarea::placeholder{
+    padding: 10px 0 0 10px
+}
+
+.informations .input-appointmentDate input {
+    width: 210px;
+    height: 30px;
+    border: 2px solid #6b6b6b;
+}
+
+.container-general button {
+    border: 2px solid #009b87;
+    background-color: transparent;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.container-general button:hover {
+    color: #fff;
+}
+
+@media (max-width: 600px){
+    .card-research{
+        width: 90% !important;
+    }
+
+    .container{
+        padding: 0 20px !important;
+    }
+
+    .input-appointmentDate,
+    .link-consulta{
+        width: 50% !important;
+    }
+
+    .ConsulationPage .informations .input-appointmentDate input{
+        width: 80% !important;
+    }
+
+    .link-consulta a {
+        width: 100% !important;
+    }
+}

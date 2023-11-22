@@ -1,0 +1,16 @@
+
+.avalietions img {
+    width: 25px;
+    height: 25px;
+}
+
+.row-2 {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.PsychologistResearch .row-2 input {
+    height: 40px;
+    width: 245px;
+}
