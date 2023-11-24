@@ -2,82 +2,80 @@ import { Link } from "react-router-dom";
 import "./Cadastro.css";
 import Botao from "../../Button/Button";
 import ImageLogo from "../../ImageLogo/ImageLogo";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 const Cadastro = () => {
   const aoEnviar = async (evento) => {
     evento.preventDefault();
-    
-    var data = incluir().then((result)=>
-    {
-      if(result){
+
+    var data = incluir().then((result) => {
+      if (result) {
         toast.success("Registro cadastrado com sucesso.");
-      }else{
+      } else {
         toast.error("Ocorreu um erro, tente novamente mais tarde!");
       }
-    })
+    });
   };
 
-  async function incluir(){
+  async function incluir() {
     debugger;
 
     var user = {
-      "id": null,
-      "name": document.getElementById("nome").value,
-      "email": document.getElementById("email").value,
-      "password": document.getElementById("password").value,
+      id: null,
+      name: document.getElementById("nome").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value,
       //"picture": document.getElementById("picture").value,
-      "isAdmin": true,
-      "address": {
-        "street": document.getElementById("street").value,
-        "cep": document.getElementById("cep").value,
-        "city": document.getElementById("city").value,
-        "neighborhood": document.getElementById("neighborhood").value,
-        "states": document.getElementById("states").value
-      }
+      isAdmin: true,
+      address: {
+        street: document.getElementById("street").value,
+        cep: document.getElementById("cep").value,
+        city: document.getElementById("city").value,
+        neighborhood: document.getElementById("neighborhood").value,
+        states: document.getElementById("states").value,
+      },
     };
-
 
     try {
       debugger;
       const response = await fetch(`http://localhost:8080/users`, {
-          method: 'POST',
-          headers: {
-              'accept': '*/*',
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(user),
+        method: "POST",
+        headers: {
+          accept: "*/*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
       });
 
       console.log(user);
       if (!response.ok) {
         debugger;
         return false;
-      }else{
+      } else {
         debugger;
         return response.ok;
       }
-  } catch (error) {
-    debugger;
+    } catch (error) {
+      debugger;
       return false;
-  }
+    }
 
-  //Funciona
+    //Funciona
     // try {
     //   const response = await fetch('http://localhost:8080/users');
     //   if (!response.ok) {
     //       throw new Error('Erro ao fazer a solicitação: ' + response.status);
     //   }
     //   console.log(response)
-      
+
     //   return await response.json();
-  
+
     //   } catch (error) {
     //       console.error('Erro na solicitação:', error);
     //   }
   }
-  
-  return (  
+
+  return (
     <main>
       <Toaster />
       <section className="cadastroPage-container">
@@ -92,7 +90,11 @@ const Cadastro = () => {
               <input type="street" id="street" placeholder="Rua: " />
               <input type="cep" id="cep" placeholder="Cep: " />
               <input type="city" id="city" placeholder="Cidade: " />
-              <input type="neighborhood" id="neighborhood" placeholder="Ponto de referência: " />
+              <input
+                type="neighborhood"
+                id="neighborhood"
+                placeholder="Ponto de referência: "
+              />
               <input type="states" id="states" placeholder="Estado: " />
               <input type="password" id="password" placeholder="*Senha: " />
               <Botao textoBotao="Criar conta" />
