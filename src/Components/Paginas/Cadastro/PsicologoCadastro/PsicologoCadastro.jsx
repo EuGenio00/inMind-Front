@@ -28,13 +28,6 @@ const PsicologoCadastro = () => {
       cnpj: document.getElementById("numeroCNPJ").value,
       password: document.getElementById("password").value,
       isAdmin: true,
-      // address: {
-      //   street: document.getElementById("street").value,
-      //   cep: document.getElementById("cep").value,
-      //   city: document.getElementById("city").value,
-      //   neighborhood: document.getElementById("neighborhood").value,
-      //   states: document.getElementById("states").value,
-      // },
     };
 
     try {
