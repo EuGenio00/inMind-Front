@@ -17,6 +17,7 @@ const AppointmentPsychologist = () => {
     const handlePhotoClick = () => {
         setShowText(false);
     };
+
     const handleFileChange = (event) => {
       const selectedFile = event.target.files[0];
   
@@ -48,7 +49,7 @@ const AppointmentPsychologist = () => {
           uploadData.append('description', formData.description);
           uploadData.append('appointmentDate', formData.appointmentDate);
     
-          const response = await axios.post('Nosso Endepoint', uploadData);
+          const response = await fetch(`http://localhost:8080/`);
     
           if (response.data.success) {
             console.log('agendamento bazou!');
@@ -93,10 +94,10 @@ const AppointmentPsychologist = () => {
                   {showText && <p onClick={handlePhotoClick}>Foto</p>}
                   {!showText && (
                     <>
-                    <input type="file" onChange={handleFileChange} />
-                    {photoUrl && <img src={photoUrl} alt="Foto" />}
+                    <input type="file" onChange={handleFileChange} className={photoUrl? 'show': ''} />
+                    {photoUrl && <img src={photoUrl} alt="Foto" className='showFile' />}
                     </>
-                  )}
+                  )} 
                 </span>
                 <span className="informations">
                 <div className='input-description'>
