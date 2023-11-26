@@ -32,7 +32,7 @@ const PsicologoCadastro = () => {
 
     try {
       debugger;
-      const response = await fetch(`http://localhost:8080/users`, {
+      const response = await fetch(`http://localhost:8080/psychologists`, {
         method: "POST",
         headers: {
           accept: "*/*",

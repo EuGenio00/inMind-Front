@@ -31,7 +31,7 @@ const PacienteCadastro = () => {
 
     try {
       debugger;
-      const response = await fetch(`http://localhost:8080/users`, {
+      const response = await fetch(`http://localhost:8080/patients`, {
         method: "POST",
         headers: {
           accept: "*/*",
