@@ -18,9 +18,9 @@ const Menu = () => {
           <li>
             <Link to="/login">Login</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/cadastro">Cadastro</Link>
-          </li>
+          </li> */}
           <PopUp />
         </ul>
       </nav>

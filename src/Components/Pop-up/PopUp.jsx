@@ -22,8 +22,8 @@ const PopUp = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleButtonClick}>Mostrar Pop-up</button>
+    <div className="botao-popUp">
+      <button onClick={handleButtonClick}>Cadastrar</button>
 
       <Modal
         isOpen={isModalOpen}
@@ -36,12 +36,12 @@ const PopUp = () => {
             ver o overflow.
           </p>
 
-          <Link to="/cadastro">
+          <Link to="/cadastro-psicologo">
             {" "}
             <button onClick={() => handleLinkClick("Link 1")}>Psicólogo</button>
           </Link>
 
-          <Link to={"/cadastro"}>
+          <Link to={"/cadastro-paciente"}>
             <button onClick={() => handleLinkClick("Link 2")}>Paciente</button>
           </Link>
           <button onClick={handleCloseModal}>X</button>

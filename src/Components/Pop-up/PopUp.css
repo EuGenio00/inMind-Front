@@ -1,0 +1,9 @@
+
+.botao-popUp button {
+  background-color: #c8edeb;
+  color: #24506b;
+}
+
+.botao-popUp button:hover{
+  color: #fff;
+}
