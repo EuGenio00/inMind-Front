@@ -1,6 +1,7 @@
 import "./PopUp.css";
 import { useState } from "react";
 import Modal from "react-modal";
+import { Link } from "react-router-dom";
 
 const PopUp = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -34,9 +35,16 @@ const PopUp = () => {
             Conteúdo do Pop-up com overflow. Adicione bastante texto aqui para
             ver o overflow.
           </p>
-          <button onClick={() => handleLinkClick("Link 1")}>Link 1</button>
-          <button onClick={() => handleLinkClick("Link 2")}>Link 2</button>
-          <button onClick={handleCloseModal}>Fechar Pop-up</button>
+
+          <Link to="/cadastro">
+            {" "}
+            <button onClick={() => handleLinkClick("Link 1")}>Psicólogo</button>
+          </Link>
+
+          <Link to={"/cadastro"}>
+            <button onClick={() => handleLinkClick("Link 2")}>Paciente</button>
+          </Link>
+          <button onClick={handleCloseModal}>X</button>
         </div>
       </Modal>
     </div>
