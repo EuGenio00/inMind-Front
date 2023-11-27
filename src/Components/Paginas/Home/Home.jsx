@@ -1,11 +1,18 @@
 import CalendarComponent from "../../Calendar/CalendarComponent";
 import DrawerComponent from "../../Drawer/DrawerComponent";
+import SearchBar from "../../SearchBar/SearchBar";
+import UserProfile from "../../UserProfile/UserProfile";
 import "./Home.css";
 
 const Home = () => {
   return (
     <main>
-      <DrawerComponent />
+      <div>
+        <DrawerComponent />
+        <SearchBar />
+        <UserProfile />
+      </div>
+
       <div>
         <h2>Nossa Home</h2>
         <p>
