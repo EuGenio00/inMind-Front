@@ -18,7 +18,7 @@ const DrawerComponent = () => {
   };
 
   return (
-    <div>
+    <div className="drawer-content">
       <Button onClick={handleDrawerOpen}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

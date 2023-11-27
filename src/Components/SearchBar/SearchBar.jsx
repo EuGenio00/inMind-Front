@@ -32,7 +32,7 @@ const SearchBar = () => {
     <div className="searchBar-content">
       <input
         type="text"
-        placeholder="Pesquisar psicólogo: "
+        placeholder="Pesquisar psicólogo "
         value={searchTerm}
         onChange={handleInputChange}
       />

@@ -1,3 +1,9 @@
+
+.drawer-content button{
+  max-width: 30px;
+  max-height: 60px;
+}
+
 .custom-drawer {
   background-color: #f0f0f0; /* Exemplo de cor de fundo */
   padding: 16px; /* Exemplo de preenchimento */
