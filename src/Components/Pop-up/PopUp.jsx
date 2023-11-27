@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 const PopUp = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const handleButtonClick = () => {
+  const handleButtonClick = async (evento) => {
+    evento.preventDefault();
     setModalOpen(true);
   };
 
@@ -17,7 +18,8 @@ const PopUp = () => {
     setModalOpen(false);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (evento) => {
+    evento.preventDefault();
     setModalOpen(false);
   };
 
@@ -31,20 +33,27 @@ const PopUp = () => {
         contentLabel="Overflow Popup"
       >
         <div className="popup-content">
-          <p>
-            Conteúdo do Pop-up com overflow. Adicione bastante texto aqui para
-            ver o overflow.
-          </p>
+          <div className="firstItem-popUp">
+            <p>
+              Selecione a melhor opção para seguir com seu <span>CADASTRO</span>
+              !
+            </p>
+            <button onClick={handleCloseModal}>X</button>
+          </div>
 
-          <Link to="/cadastro-psicologo">
-            {" "}
-            <button onClick={() => handleLinkClick("Link 1")}>Psicólogo</button>
-          </Link>
+          <div className="secoundItem-popUp">
+            <Link to={"/cadastro-psicologo"}>
+              <button onClick={() => handleLinkClick("Link 1")}>
+                Psicólogo
+              </button>
+            </Link>
 
-          <Link to={"/cadastro-paciente"}>
-            <button onClick={() => handleLinkClick("Link 2")}>Paciente</button>
-          </Link>
-          <button onClick={handleCloseModal}>X</button>
+            <Link to={"/cadastro-paciente"}>
+              <button onClick={() => handleLinkClick("Link 2")}>
+                Paciente
+              </button>
+            </Link>
+          </div>
         </div>
       </Modal>
     </div>
