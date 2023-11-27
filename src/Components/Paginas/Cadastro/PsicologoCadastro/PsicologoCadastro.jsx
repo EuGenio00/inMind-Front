@@ -1,10 +1,10 @@
+import "../Cadastro.css";
 import { Link } from "react-router-dom";
-import "./Cadastro.css";
-import Botao from "../../Button/Button";
-import ImageLogo from "../../ImageLogo/ImageLogo";
 import toast, { Toaster } from "react-hot-toast";
+import Botao from "../../../Button/Button";
+import ImageLogo from "../../../ImageLogo/ImageLogo";
 
-const Cadastro = () => {
+const PsicologoCadastro = () => {
   const aoEnviar = async (evento) => {
     evento.preventDefault();
 
@@ -24,21 +24,15 @@ const Cadastro = () => {
       id: null,
       name: document.getElementById("nome").value,
       email: document.getElementById("email").value,
+      crp: document.getElementById("numeroCRP").value,
+      cnpj: document.getElementById("numeroCNPJ").value,
       password: document.getElementById("password").value,
-      //"picture": document.getElementById("picture").value,
       isAdmin: true,
-      address: {
-        street: document.getElementById("street").value,
-        cep: document.getElementById("cep").value,
-        city: document.getElementById("city").value,
-        neighborhood: document.getElementById("neighborhood").value,
-        states: document.getElementById("states").value,
-      },
     };
 
     try {
       debugger;
-      const response = await fetch(`http://localhost:8080/users`, {
+      const response = await fetch(`http://localhost:8080/psychologists`, {
         method: "POST",
         headers: {
           accept: "*/*",
@@ -59,20 +53,6 @@ const Cadastro = () => {
       debugger;
       return false;
     }
-
-    //Funciona
-    // try {
-    //   const response = await fetch('http://localhost:8080/users');
-    //   if (!response.ok) {
-    //       throw new Error('Erro ao fazer a solicitação: ' + response.status);
-    //   }
-    //   console.log(response)
-
-    //   return await response.json();
-
-    //   } catch (error) {
-    //       console.error('Erro na solicitação:', error);
-    //   }
   }
 
   return (
@@ -87,15 +67,16 @@ const Cadastro = () => {
             <form action="" onSubmit={aoEnviar}>
               <input type="text" id="nome" placeholder="Seu nome completo: " />
               <input type="email" id="email" placeholder="E-mail: " />
-              <input type="street" id="street" placeholder="Rua: " />
-              <input type="cep" id="cep" placeholder="Cep: " />
-              <input type="city" id="city" placeholder="Cidade: " />
               <input
-                type="neighborhood"
-                id="neighborhood"
-                placeholder="Ponto de referência: "
+                type="numeroCRP"
+                id="numeroCRP"
+                placeholder="Número CRP: "
               />
-              <input type="states" id="states" placeholder="Estado: " />
+              <input
+                type="numeroCNPJ"
+                id="numeroCNPJ"
+                placeholder="Numero CNPJ: "
+              />
               <input type="password" id="password" placeholder="*Senha: " />
               <Botao textoBotao="Criar conta" />
             </form>
@@ -113,4 +94,4 @@ const Cadastro = () => {
   );
 };
 
-export default Cadastro;
+export default PsicologoCadastro;

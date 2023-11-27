@@ -1,10 +1,10 @@
+import "../Cadastro.css";
 import { Link } from "react-router-dom";
-import "./Cadastro.css";
-import Botao from "../../Button/Button";
-import ImageLogo from "../../ImageLogo/ImageLogo";
 import toast, { Toaster } from "react-hot-toast";
+import Botao from "../../../Button/Button";
+import ImageLogo from "../../../ImageLogo/ImageLogo";
 
-const Cadastro = () => {
+const PacienteCadastro = () => {
   const aoEnviar = async (evento) => {
     evento.preventDefault();
 
@@ -24,21 +24,14 @@ const Cadastro = () => {
       id: null,
       name: document.getElementById("nome").value,
       email: document.getElementById("email").value,
+      cpf: document.getElementById("numeroCPF").value,
       password: document.getElementById("password").value,
-      //"picture": document.getElementById("picture").value,
       isAdmin: true,
-      address: {
-        street: document.getElementById("street").value,
-        cep: document.getElementById("cep").value,
-        city: document.getElementById("city").value,
-        neighborhood: document.getElementById("neighborhood").value,
-        states: document.getElementById("states").value,
-      },
     };
 
     try {
       debugger;
-      const response = await fetch(`http://localhost:8080/users`, {
+      const response = await fetch(`http://localhost:8080/patients`, {
         method: "POST",
         headers: {
           accept: "*/*",
@@ -59,20 +52,6 @@ const Cadastro = () => {
       debugger;
       return false;
     }
-
-    //Funciona
-    // try {
-    //   const response = await fetch('http://localhost:8080/users');
-    //   if (!response.ok) {
-    //       throw new Error('Erro ao fazer a solicitação: ' + response.status);
-    //   }
-    //   console.log(response)
-
-    //   return await response.json();
-
-    //   } catch (error) {
-    //       console.error('Erro na solicitação:', error);
-    //   }
   }
 
   return (
@@ -87,15 +66,7 @@ const Cadastro = () => {
             <form action="" onSubmit={aoEnviar}>
               <input type="text" id="nome" placeholder="Seu nome completo: " />
               <input type="email" id="email" placeholder="E-mail: " />
-              <input type="street" id="street" placeholder="Rua: " />
-              <input type="cep" id="cep" placeholder="Cep: " />
-              <input type="city" id="city" placeholder="Cidade: " />
-              <input
-                type="neighborhood"
-                id="neighborhood"
-                placeholder="Ponto de referência: "
-              />
-              <input type="states" id="states" placeholder="Estado: " />
+              <input type="numeroCPF" id="numeroCPF" placeholder="Seu CPF: " />
               <input type="password" id="password" placeholder="*Senha: " />
               <Botao textoBotao="Criar conta" />
             </form>
@@ -113,4 +84,4 @@ const Cadastro = () => {
   );
 };
 
-export default Cadastro;
+export default PacienteCadastro;
