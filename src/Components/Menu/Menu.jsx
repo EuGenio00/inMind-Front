@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Menu.css";
+import PopUp from "../Pop-up/PopUp";
 
 const Menu = () => {
   return (
@@ -17,9 +18,10 @@ const Menu = () => {
           <li>
             <Link to="/login">Login</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/cadastro">Cadastro</Link>
-          </li>
+          </li> */}
+          <PopUp />
         </ul>
       </nav>
     </header>
