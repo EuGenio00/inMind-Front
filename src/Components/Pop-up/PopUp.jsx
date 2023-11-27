@@ -35,8 +35,8 @@ const PopUp = () => {
         <div className="popup-content">
           <div className="firstItem-popUp">
             <p>
-              Selecione a melhor opção para seguir com seu <span>CADASTRO</span>
-              !
+              Selecione uma melhor opção para seguir com seu{" "}
+              <span>CADASTRO</span>!
             </p>
             <button onClick={handleCloseModal}>X</button>
           </div>
