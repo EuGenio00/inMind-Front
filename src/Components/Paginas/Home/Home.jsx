@@ -1,8 +1,11 @@
+import CalendarComponent from "../../Calendar/CalendarComponent";
+import DrawerComponent from "../../Drawer/DrawerComponent";
 import "./Home.css";
 
 const Home = () => {
   return (
     <main>
+      <DrawerComponent />
       <div>
         <h2>Nossa Home</h2>
         <p>
@@ -11,6 +14,7 @@ const Home = () => {
           praesentium at blanditiis possimus explicabo, hic repellat fuga
           laudantium placeat eum quae facere repudiandae?
         </p>
+        <CalendarComponent />
       </div>
     </main>
   );

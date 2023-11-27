@@ -1,0 +1,15 @@
+
+
+.react-calendar__navigation {
+  background-color: black;
+}
+
+.calendar-content {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
+.react-calendar__viewContainer {
+  background-color: coral;
+}

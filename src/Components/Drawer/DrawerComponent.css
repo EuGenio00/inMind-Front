@@ -1,0 +1,9 @@
+.custom-drawer {
+  background-color: #f0f0f0; /* Exemplo de cor de fundo */
+  padding: 16px; /* Exemplo de preenchimento */
+  width: 250px; /* Exemplo de largura */
+}
+
+.custom-drawer button {
+  margin-top: 8px; /* Exemplo de margem superior para botões dentro do Drawer */
+}
