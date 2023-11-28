@@ -3,6 +3,7 @@ import "./Login.css";
 import Botao from "../../Button/Button";
 import ImageLogo from "../../ImageLogo/ImageLogo";
 import { useState } from "react";
+import Menu from "../../Menu/Menu";
 
 // eslint-disable-next-line react/prop-types
 const Login = ({ onLogin, onError }) => {
@@ -42,39 +43,42 @@ const Login = ({ onLogin, onError }) => {
   };
 
   return (
-    <main>
-      <section className="cadastroPage-container">
-        <div className="cadastroPage-content">
-          <div className="formulario-container">
-            <h2>
-              Log<span>IN</span>
-            </h2>
-            <form action="" onSubmit={aoEnviar}>
-              <input
-                type="email"
-                placeholder="E-mail: "
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                type="password"
-                placeholder="*Senha: "
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <Botao textoBotao="Entrar" onClick={handleLogin} />
-            </form>
-            <p>
-              Ainda não é cadastrado? Cadastre-se{" "}
-              <span>
-                <Link to="/cadastro">aqui.</Link>
-              </span>
-            </p>
+    <div>
+      <Menu />
+      <main>
+        <section className="cadastroPage-container">
+          <div className="cadastroPage-content">
+            <div className="formulario-container">
+              <h2>
+                Log<span>IN</span>
+              </h2>
+              <form action="" onSubmit={aoEnviar}>
+                <input
+                  type="email"
+                  placeholder="E-mail: "
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                  type="password"
+                  placeholder="*Senha: "
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <Botao textoBotao="Entrar" onClick={handleLogin} />
+              </form>
+              <p>
+                Ainda não é cadastrado? Cadastre-se{" "}
+                <span>
+                  <Link to="/cadastro">aqui.</Link>
+                </span>
+              </p>
+            </div>
+            <ImageLogo />
           </div>
-          <ImageLogo />
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
   );
 };
 

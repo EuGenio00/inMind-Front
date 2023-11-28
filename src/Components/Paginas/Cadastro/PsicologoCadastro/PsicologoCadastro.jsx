@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import Botao from "../../../Button/Button";
 import ImageLogo from "../../../ImageLogo/ImageLogo";
+import Menu from "../../../Menu/Menu";
 
 const PsicologoCadastro = () => {
   const aoEnviar = async (evento) => {
@@ -56,41 +57,48 @@ const PsicologoCadastro = () => {
   }
 
   return (
-    <main>
-      <Toaster />
-      <section className="cadastroPage-container">
-        <div className="cadastroPage-content">
-          <div className="formulario-container">
-            <h2>
-              Cadastre-se <span>JÁ</span>!
-            </h2>
-            <form action="" onSubmit={aoEnviar}>
-              <input type="text" id="nome" placeholder="Seu nome completo: " />
-              <input type="email" id="email" placeholder="E-mail: " />
-              <input
-                type="numeroCRP"
-                id="numeroCRP"
-                placeholder="Número CRP: "
-              />
-              <input
-                type="numeroCNPJ"
-                id="numeroCNPJ"
-                placeholder="Numero CNPJ: "
-              />
-              <input type="password" id="password" placeholder="*Senha: " />
-              <Botao textoBotao="Criar conta" />
-            </form>
-            <p>
-              Já tem cadastro? Faça seu login{" "}
-              <span>
-                <Link to="/login">aqui.</Link>
-              </span>
-            </p>
+    <div>
+      <Menu />
+      <main>
+        <Toaster />
+        <section className="cadastroPage-container">
+          <div className="cadastroPage-content">
+            <div className="formulario-container">
+              <h2>
+                Cadastre-se <span>JÁ</span>!
+              </h2>
+              <form action="" onSubmit={aoEnviar}>
+                <input
+                  type="text"
+                  id="nome"
+                  placeholder="Seu nome completo: "
+                />
+                <input type="email" id="email" placeholder="E-mail: " />
+                <input
+                  type="numeroCRP"
+                  id="numeroCRP"
+                  placeholder="Número CRP: "
+                />
+                <input
+                  type="numeroCNPJ"
+                  id="numeroCNPJ"
+                  placeholder="Numero CNPJ: "
+                />
+                <input type="password" id="password" placeholder="*Senha: " />
+                <Botao textoBotao="Criar conta" />
+              </form>
+              <p>
+                Já tem cadastro? Faça seu login{" "}
+                <span>
+                  <Link to="/login">aqui.</Link>
+                </span>
+              </p>
+            </div>
+            <ImageLogo />
           </div>
-          <ImageLogo />
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
   );
 };
 
