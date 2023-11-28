@@ -6,16 +6,16 @@ import "react-calendar/dist/Calendar.css";
 
 const CalendarComponent = () => {
   const [date, setDate] = useState(new Date());
-  const [time, setTime] = useState("");
-  const [meetingLink, setMeetingLink] = useState("");
+  // const [time, setTime] = useState("");
+  // const [meetingLink, setMeetingLink] = useState("");
 
   useEffect(() => {
     fetch("endpoint de agendamento")
       .then((response) => response.json())
       .then((data) => {
         setDate(new Date(data.date));
-        setTime(data.time);
-        setMeetingLink(data.meetingLink);
+        // setTime(data.time);
+        // setMeetingLink(data.meetingLink);
       })
       .catch((error) =>
         console.error("Erro ao obter dados do back-end:", error)
@@ -26,6 +26,7 @@ const CalendarComponent = () => {
     setDate(newDate);
   };
 
+  /*{
   const handleTimeChange = (event) => {
     setTime(event.target.value);
   };
@@ -33,20 +34,20 @@ const CalendarComponent = () => {
   const handleLinkChange = (event) => {
     setMeetingLink(event.target.value);
   };
-
+}*/
   const scheduleMeeting = () => {
     console.log("Data e Hora:", date);
-    console.log("Link do Google Meet:", meetingLink);
+    // console.log("Link do Google Meet:", meetingLink);
   };
 
   return (
     <div>
-      <h2>Calendário com Hora e Link para Google Meet</h2>
+      <h2>Acompanhe o seu agendamento no Calendário</h2>
       <div className="calendar-content">
         <label>Data:</label>
         <Calendar onChange={handleDateChange} value={date} />
       </div>
-      <div>
+      {/* <div>
         <label>Hora:</label>
         <input type="time" value={time} onChange={handleTimeChange} />
       </div>
@@ -54,7 +55,8 @@ const CalendarComponent = () => {
         <label>Link do Google Meet:</label>
         <input type="text" value={meetingLink} onChange={handleLinkChange} />
       </div>
-      <button onClick={scheduleMeeting}>Agendar Reunião</button>
+      */}
+      <button onClick={scheduleMeeting}>Acompanhar agendamento</button>
     </div>
   );
 };
