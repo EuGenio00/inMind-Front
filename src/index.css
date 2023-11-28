@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
 
 :root {
@@ -77,8 +78,8 @@ button:focus-visible {
   }
 }
 
-.css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
+/* .css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
   background-color: #24506b !important;
   color: #fff;
   font-family: 'IBM Plex Mono', monospace;
-}
+} */

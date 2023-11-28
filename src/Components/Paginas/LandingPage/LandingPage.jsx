@@ -1,3 +1,4 @@
+
 import Menu from "../../Menu/Menu";
 import "./LandingPage.css";
 

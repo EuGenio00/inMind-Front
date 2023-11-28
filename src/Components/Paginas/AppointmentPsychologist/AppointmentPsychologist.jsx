@@ -1,23 +1,50 @@
-import { useState } from 'react';
-import axios from 'axios'
+import { useState, useEffect } from 'react';
 import './AppointmentPsychologist.css'
 
 
 const AppointmentPsychologist = () => {
     const [showText, setShowText] = useState(true);
-    const [photoUrl, setPhotoUrl] = useState('');
-    const [file, setFile] = useState(null);
+/*     const [photoUrl, setPhotoUrl] = useState(''); */
+    /* const [file, setFile] = useState(null); */
     const [formData, setFormData] = useState({
-      name: '',
-      age: '',
-      description: '',
       appointmentDate: ''
     });
+    const [dados, setDados] = useState ({
+      nome: '',
+      description: '',
+      imagem: ''
+    })
 
     const handlePhotoClick = () => {
         setShowText(false);
     };
-    const handleFileChange = (event) => {
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await fetch ('http://localhost:');
+          
+          if (!response.ok) {
+            throw new Error('Algo deu errado com o Get')
+          }
+
+          const data = await response.json();
+
+          setDados({
+            nome: data.nome,
+            description: data.description,
+            imagem: data.img
+          });
+        } catch (error) {
+          console.error('Erro ao obter os dados (na requisiçãp):', error.message);
+        }
+      }
+
+      fetchData();
+    
+    }, [])
+
+/*     const handleFileChange = (event) => {
       const selectedFile = event.target.files[0];
   
       if (selectedFile) {
@@ -30,7 +57,7 @@ const AppointmentPsychologist = () => {
   
         reader.readAsDataURL(selectedFile);
       }
-    };
+    }; */
     const handleInputChange = (event) => {
       const { name, value } = event.target;
       setFormData({
@@ -40,25 +67,31 @@ const AppointmentPsychologist = () => {
     };
 
     const uploadAppointment = async () => {
-        try {
-          const uploadData = new FormData();
-          uploadData.append('photo', file);
-          uploadData.append('name', formData.name);
-          uploadData.append('age', formData.age);
-          uploadData.append('description', formData.description);
-          uploadData.append('appointmentDate', formData.appointmentDate);
-    
-          const response = await axios.post('Nosso Endepoint', uploadData);
-    
-          if (response.data.success) {
-            console.log('agendamento bazou!');
-          } else {
-            console.error('Falha no agendamento.');
-          }
-        } catch (error) {
-          console.error('Erro ao enviar os dados:', error);
+      try {
+        const uploadData = new FormData();
+        uploadData.append('appointmentDate', formData.appointmentDate);
+  
+        const response = await fetch(`http://localhost:8080/schedulings`, {
+          method: 'POST',
+          headers: {
+            'accept': '*/*',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(),
+        });
+  
+        if (response.data.success) {
+          console.log('agendamento bazou!');
+          return response.ok;
+        } else {
+          console.error('Falha no agendamento.');
+          return false
         }
-      };
+      } catch (error) {
+        console.error('Erro ao enviar os dados:', error);
+        return false;
+      }
+    };
 
 
     return (
@@ -72,7 +105,7 @@ const AppointmentPsychologist = () => {
               <div className="children">
                 <span className="informations">
                   <div className='input-agendamento'>
-                  <label htmlFor="name">Name:</label>
+                  <label htmlFor="name">{dados.nome}</label>
                   <input 
                     type="text" 
                     name="name"
@@ -92,15 +125,12 @@ const AppointmentPsychologist = () => {
                   </div>
                   {showText && <p onClick={handlePhotoClick}>Foto</p>}
                   {!showText && (
-                    <>
-                    <input type="file" onChange={handleFileChange} />
-                    {photoUrl && <img src={photoUrl} alt="Foto" />}
-                    </>
+                    <img src={dados.imagem} alt='imagem' />
                   )}
                 </span>
                 <span className="informations">
                 <div className='input-description'>
-                  <label htmlFor="description">Sobre:</label>
+                  <label htmlFor="description">{dados.description}</label>
                   <textarea
                     name="description"
                     placeholder="Descrição"
