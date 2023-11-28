@@ -19,6 +19,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .input-description label:first-child {
@@ -39,6 +40,7 @@
 .input-agendamento{
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .input-agendamento label{
@@ -49,6 +51,18 @@
     border: 2px solid #6b6b6b;
     height: 30px;
     width: 200px;
+}
+
+.informations .show{
+    width: 70px;
+    height: 119px;
+}
+
+.informations .showFile {
+    width: 80px;
+    position: absolute;
+    right: 0;
+    height: 120px;
 }
 
 .AppointmentPsychologist .card-research{

@@ -1,22 +1,38 @@
 
-import axios from 'axios'
+import { useState, useEffect } from 'react';
 import './PsychologistResearch.css'
 
 const PsychologistResearch = () => {
 
-
-    const GetPsychologist = async () => {
-        try {    
-          const response = await axios.get('Nosso Endepoint');
-    
-          response.data.success
-
-        } catch (error) {
-          console.error('Erro ao receber os dados:', error);
+      const [dados, setDados] = useState ({
+        nome: '',
+        description: '',
+        imagem: ''
+      })
+      useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch ('http://localhost:');
+            
+            if (!response.ok) {
+              throw new Error('Algo deu errado com o Get')
+            }
+  
+            const data = await response.json();
+  
+            setDados({
+              nome: data.nome,
+              description: data.description,
+              imagem: data.img
+            });
+          } catch (error) {
+            console.error('Erro ao obter os dados (na requisiçãp):', error.message);
+          }
         }
-      };
-
-      console.log(GetPsychologist)
+  
+        fetchData();
+      
+      }, [])
 
 
     return (
@@ -29,13 +45,16 @@ const PsychologistResearch = () => {
                 <li className='PsychologistResearch'>
                     <div className="card-research">
                       <span className="informations">
+                        <label htmlFor="name">{dados.nome}</label>
                         <input 
                           type="text" 
                           name="nome"
                           placeholder="Nome"
                           value=''
-                          onChange=''/>
+                          onChange=''
+                        />
                         <div className='row-2'>
+                        <label htmlFor="description">{dados.description}</label>
                           <input 
                             type="text"
                             name="descricao"
@@ -51,7 +70,7 @@ const PsychologistResearch = () => {
                         </div>
                       </span>
                       <div className="photo">
-                        <img src="" alt="foto" />
+                        <img src={dados.imagem} alt="foto" />
                       </div>
                     </div>
                 </li>
@@ -63,4 +82,4 @@ const PsychologistResearch = () => {
 
 }
 
-export default PsychologistResearch
+export default PsychologistResearch;
