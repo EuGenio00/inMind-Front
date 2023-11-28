@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
 
 .drawer-content button{
   max-width: 30px;
@@ -5,11 +6,38 @@
 }
 
 .custom-drawer {
-  background-color: #f0f0f0; /* Exemplo de cor de fundo */
-  padding: 16px; /* Exemplo de preenchimento */
-  width: 250px; /* Exemplo de largura */
+  padding: 20px;
+  width: 355px;
+  max-width: 100%;
 }
 
 .custom-drawer button {
-  margin-top: 8px; /* Exemplo de margem superior para botões dentro do Drawer */
+  margin-top: 8px;
+  max-width: 35px;
+  max-height: 60px;
+}
+
+.custom-drawer button:hover{
+  background-color: #c8edeb;
+}
+
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
+  background-color: #24506b !important;
+  color: #fff !important;
+}
+
+.button-drawerClose {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.button-drawerClose button{
+  background-color: #fff;
+  border-radius: 100%;
+  padding: 12px;
+}
+
+.itens-drawer ul{
+  font-family: 'IBM Plex Mono', monospace !important;
 }

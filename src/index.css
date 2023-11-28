@@ -76,3 +76,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
+  background-color: #24506b !important;
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+}
