@@ -4,9 +4,44 @@ import Botao from "../../Button/Button";
 import ImageLogo from "../../ImageLogo/ImageLogo";
 
 const Login = () => {
-  const aoEnviar = (evento) => {
+
+  const aoEnviar = async (evento) => {
     evento.preventDefault();
+
+    var data = incluir().then((result) => {
+      if (result) {
+        toast.success("Registro cadastrado com sucesso.");
+      } else {
+        toast.error("Ocorreu um erro, tente novamente mais tarde!");
+      }
+    });
   };
+
+  async function incluir() {
+    debugger;
+
+    var user = {
+      login: document.getElementById("nome").value,
+      email: document.getElementById("email").value,
+    };
+
+    try {
+      debugger;
+      const response = await axios.post(`http://localhost:8080/patients`, user);
+
+      console.log(user);
+      if (response.status != 201) {
+        debugger;
+        return false;
+      } else {
+        debugger;
+        return response.data;
+      }
+    } catch (error) {
+      debugger;
+      return false;
+    }
+  }
 
   return (
     <main>
