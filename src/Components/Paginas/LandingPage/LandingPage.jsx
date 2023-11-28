@@ -45,11 +45,12 @@ const LandingPage = () => {
                   alt="Imagem card 1"
                 />
               </div>
+              <h4>Síndrome do Pânico</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                reiciendis nemo vitae, a dolorum ad recusandae, cumque,
-                voluptate similique et molestiae blanditiis explicabo? Eum
-                praesentium deleniti cupiditate sapiente recusandae quo.
+                A síndrome ou transtorno do pânico (ansiedade paroxística
+                episódica) é uma doença que se caracteriza pela ocorrência
+                repentina, inesperada e de certa forma inexplicável de crises de
+                ansiedade aguda ...
               </p>
             </div>
           </a>
@@ -65,11 +66,12 @@ const LandingPage = () => {
                   alt="Imagem card 2"
                 />
               </div>
+              <h4>Depressão</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                reiciendis nemo vitae, a dolorum ad recusandae, cumque,
-                voluptate similique et molestiae blanditiis explicabo? Eum
-                praesentium deleniti cupiditate sapiente recusandae quo.
+                A depressão é uma doença mental. Ela é caracterizada por
+                alterações na atividade cerebral que levam a um quadro duradouro
+                de tristeza ou perda de interesse por atividades corriqueiras.
+                Segundo a ...
               </p>
             </div>
           </a>
@@ -85,11 +87,12 @@ const LandingPage = () => {
                   alt="Imagem card 3"
                 />
               </div>
+              <h4>Ansiedade</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                reiciendis nemo vitae, a dolorum ad recusandae, cumque,
-                voluptate similique et molestiae blanditiis explicabo? Eum
-                praesentium deleniti cupiditate sapiente recusandae quo.
+                O Transtorno de ansiedade é um distúrbio psiquiátrico em que há
+                excesso de apreensão e expectativa de alguém em relação a
+                diversos acontecimentos, que costuma perdurar por mais de seis
+                ...
               </p>
             </div>
           </a>
@@ -105,11 +108,11 @@ const LandingPage = () => {
                   alt="Imagem card 4"
                 />
               </div>
+              <h4>Transtorno Afetivo Bipolar</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                reiciendis nemo vitae, a dolorum ad recusandae, cumque,
-                voluptate similique et molestiae blanditiis explicabo? Eum
-                praesentium deleniti cupiditate sapiente recusandae quo.
+                O Transtorno Afetivo Bipolar é caracterizado por períodos em que
+                se alternam sintomas do pólo depressivo com aqueles do polo da
+                euforia. “Há aqueles períodos caracteriza...
               </p>
             </div>
           </a>
