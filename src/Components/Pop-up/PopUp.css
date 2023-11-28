@@ -1,5 +1,4 @@
 
-
 .botao-popUp button {
   border: 1px solid #fff;
   background-color: #c8edeb;
@@ -12,6 +11,7 @@
 
 .popup-content button {
   font-weight: 500;
+  background-color: #1a1a1a;
 }
 
 .popup-content button:hover{
@@ -97,5 +97,3 @@
   background-color: #000;
   color: #fff;
 } */
-
-

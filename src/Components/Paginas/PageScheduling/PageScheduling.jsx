@@ -1,3 +1,4 @@
+
 import './PageScheduling.css'
 import { useState, useEffect } from 'react';
 
@@ -73,4 +74,4 @@ const Scheduling = () => {
 
 }
 
-export default Scheduling
+export default Scheduling;

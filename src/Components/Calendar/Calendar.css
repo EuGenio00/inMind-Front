@@ -1,0 +1,18 @@
+/* .react-calendar{
+  width: 478px !important;
+} */
+
+.react-calendar__navigation {
+  background-color: black;
+}
+
+.calendar-content {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  /* flex-direction: column; */
+}
+
+.react-calendar__viewContainer {
+  background-color: coral;
+}

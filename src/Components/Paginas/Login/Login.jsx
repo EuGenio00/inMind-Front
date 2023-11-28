@@ -1,12 +1,13 @@
+
 import { Link } from "react-router-dom";
 import "./Login.css";
 import Botao from "../../Button/Button";
 import ImageLogo from "../../ImageLogo/ImageLogo";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import Menu from "../../Menu/Menu";
 
 const Login = () => {
-
   const aoEnviar = async (evento) => {
     evento.preventDefault();
 
@@ -46,31 +47,33 @@ const Login = () => {
   }
 
   return (
-    <main>
-      <Toaster/>
+    <div>
+      <Menu />
+      <main>
+        <Toaster />
         <section className="cadastroPage-container">
-        <div className="cadastroPage-content">
-          <div className="formulario-container">
-            <h2>
-              Log<span>IN</span>
-            </h2>
-            <form action="" onSubmit={aoEnviar}>
-              <input id="username" placeholder="Username" />
-              <input id="password" type="password" placeholder="*Senha: " />
-              <Botao textoBotao="Entrar" />
-            </form>
-            <p>
-              Ainda não é cadastrado? Cadastre-se{" "}
-              <span>
-                <Link to="/cadastro">aqui.</Link>
-              </span>
-            </p>
+          <div className="cadastroPage-content">
+            <div className="formulario-container">
+              <h2>
+                Log<span>IN</span>
+              </h2>
+              <form action="" onSubmit={aoEnviar}>
+                <input id="username" placeholder="Username" />
+                <input id="password" type="password" placeholder="*Senha: " />
+                <Botao textoBotao="Entrar" />
+              </form>
+              <p>
+                Ainda não é cadastrado? Cadastre-se{" "}
+                <span>
+                  <Link to="/cadastro">aqui.</Link>
+                </span>
+              </p>
+            </div>
+            <ImageLogo />
           </div>
-          <ImageLogo />
-        </div>
-      </section>
-      
-    </main>
+        </section>
+      </main>
+    </div>
   );
 };
 
