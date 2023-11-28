@@ -7,21 +7,23 @@ const LandingPage = () => {
         {/* <h3>- Conheça nossos benefícios -</h3> */}
         <div className="landing-descricao">
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi accusantium asperiores sint, molestiae quisquam dignissimos
-            veniam harum numquam est eaque distinctio aut cumque. Deleniti
-            cupiditate soluta odit voluptatibus omnis. Et, accusantium libero
-            repellat vitae sint harum laborum neque. A nostrum nesciunt, vero
-            voluptatibus voluptates aliquam vitae odit facilis excepturi dolorem
-            est! Error sit, vel eaque reiciendis nobis repellendus voluptate?
-            Architecto fugit vel repellat modi ipsam eligendi eos non aliquam
-            deserunt quisquam magnam, accusantium corrupti iure recusandae
-            totam, et, asperiores ab perspiciatis. Delectus aliquid fuga vitae
-            saepe, iusto dolorem voluptatibus. Magni eligendi dolorem veritatis
-            corporis nostrum, nesciunt neque voluptatum? Aperiam dignissimos
-            necessitatibus temporibus reiciendis neque cum repudiandae eveniet
-            laborum! Nihil harum asperiores iste, repellendus omnis quaerat ex
-            excepturi vitae nulla.
+            Bem-vindo à nossa plataforma inMind, onde cuidar da sua saúde mental
+            é tão simples quanto alguns cliques. Estamos orgulhosos de
+            apresentar um ambiente virtual intuitivo e seguro, desenvolvido para
+            proporcionar uma experiência sem complicações. Ao criar um perfil,
+            você entra em um mundo de possibilidades para o seu bem-estar
+            emocional. Navegue por uma lista de psicólogos credenciados,
+            explorando suas especializações, disponibilidade e preços. Agende
+            consultas de maneira conveniente e realize suas sessões remotas via
+            Google Meet, garantindo a flexibilidade que você precisa. Avalie a
+            qualidade das sessões e compartilhe suas experiências, contribuindo
+            para a transparência e incentivando a melhoria constante dos
+            serviços. Seu feedback é crucial para nós, pois acreditamos na
+            importância de uma comunidade que cresce junto. Cadastre-se na
+            plataforma, fornecendo informações detalhadas sobre suas
+            especializações, horários disponíveis e valores. Junte-se a nós na
+            jornada em direção ao bem-estar emocional, porque acreditamos que
+            todos merecem apoio quando precisam.
           </p>
           <div className="foto-destaque">
             <img
