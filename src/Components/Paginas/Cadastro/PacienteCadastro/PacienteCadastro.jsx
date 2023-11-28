@@ -22,11 +22,10 @@ const PacienteCadastro = () => {
     debugger;
 
     var user = {
-      name: document.getElementById("nome").value,
+      username: document.getElementById("nome").value,
       email: document.getElementById("email").value,
       cpf: document.getElementById("numeroCPF").value,
       password: document.getElementById("password").value,
-      isAdmin: true,
       address: null
     };
 

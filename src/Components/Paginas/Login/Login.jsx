@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import Botao from "../../Button/Button";
 import ImageLogo from "../../ImageLogo/ImageLogo";
+import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 const Login = () => {
 
@@ -21,13 +23,13 @@ const Login = () => {
     debugger;
 
     var user = {
-      login: document.getElementById("nome").value,
-      email: document.getElementById("email").value,
+      login: document.getElementById("username").value,
+      password: document.getElementById("password").value,
     };
 
     try {
       debugger;
-      const response = await axios.post(`http://localhost:8080/patients`, user);
+      const response = await axios.post(`http://localhost:8080/login`, user);
 
       console.log(user);
       if (response.status != 201) {
@@ -45,15 +47,16 @@ const Login = () => {
 
   return (
     <main>
-      <section className="cadastroPage-container">
+      <Toaster/>
+        <section className="cadastroPage-container">
         <div className="cadastroPage-content">
           <div className="formulario-container">
             <h2>
               Log<span>IN</span>
             </h2>
             <form action="" onSubmit={aoEnviar}>
-              <input type="email" placeholder="E-mail: " />
-              <input type="password" placeholder="*Senha: " />
+              <input id="username" placeholder="Username" />
+              <input id="password" type="password" placeholder="*Senha: " />
               <Botao textoBotao="Entrar" />
             </form>
             <p>
@@ -66,6 +69,7 @@ const Login = () => {
           <ImageLogo />
         </div>
       </section>
+      
     </main>
   );
 };

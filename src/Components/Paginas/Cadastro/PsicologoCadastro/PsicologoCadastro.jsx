@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import Botao from "../../../Button/Button";
 import ImageLogo from "../../../ImageLogo/ImageLogo";
+import axios from "axios";
 
 const PsicologoCadastro = () => {
   const aoEnviar = async (evento) => {
@@ -21,33 +22,25 @@ const PsicologoCadastro = () => {
     debugger;
 
     var user = {
-      id: null,
-      name: document.getElementById("nome").value,
+      username: document.getElementById("nome").value,
       email: document.getElementById("email").value,
       crp: document.getElementById("numeroCRP").value,
       cnpj: document.getElementById("numeroCNPJ").value,
       password: document.getElementById("password").value,
-      isAdmin: true,
+      address: null
     };
 
     try {
       debugger;
-      const response = await fetch(`http://localhost:8080/psychologists`, {
-        method: "POST",
-        headers: {
-          accept: "*/*",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
+      const response = await axios.post(`http://localhost:8080/psychologists`, user);
 
       console.log(user);
-      if (!response.ok) {
+      if (response.status != 201) {
         debugger;
         return false;
       } else {
         debugger;
-        return response.ok;
+        return response.data;
       }
     } catch (error) {
       debugger;
