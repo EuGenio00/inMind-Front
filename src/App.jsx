@@ -19,21 +19,12 @@ function App() {
           <Routes>
             <Route>
               <Route path="/" element={<Layout />} />
-              <Route path="/home" element={<Home />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/cadastro-paciente" element={<PacienteCadastro />} />
-              <Route
-                path="/cadastro-psicologo"
-                element={<PsicologoCadastro />}
-              />
-              <Route
-                path="/agendamento"
-                element={<AppointmentPsychologist />}
-              />
-              <Route
-                path="/pesquisar-psicologo"
-                element={<PsychologistResearch />}
-              />
+              <Route path="/cadastro-psicologo" element={<PsicologoCadastro />}/>
+              <Route path="/agendamento" element={<AppointmentPsychologist />}/>
+              <Route path="/pesquisar-psicologo" element={<PsychologistResearch />}/>
               <Route path="/agendados" element={<Scheduling />} />
               <Route path="/consulta-aceita" element={<ConsulationPage />} />
             </Route>
