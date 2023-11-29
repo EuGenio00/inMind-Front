@@ -1,85 +1,84 @@
-
+import axios from "axios";
 import { useState, useEffect } from 'react';
-import './PsychologistResearch.css'
+import { useNavigate, useLocation } from "react-router-dom";
+import './PsychologistResearch.css';
 
 const PsychologistResearch = () => {
+  const [dados, setDados] = useState({
+    username: '',
+    description: '',
+    imagem: ''
+  });
 
-      const [dados, setDados] = useState ({
-        nome: '',
-        description: '',
-        imagem: ''
-      })
-      useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch ('http://localhost:');
-            
-            if (!response.ok) {
-              throw new Error('Algo deu errado com o Get')
-            }
-  
-            const data = await response.json();
-  
-            setDados({
-              nome: data.nome,
-              description: data.description,
-              imagem: data.img
-            });
-          } catch (error) {
-            console.error('Erro ao obter os dados (na requisiçãp):', error.message);
-          }
-        }
-  
-        fetchData();
-      
-      }, [])
+  const location = useLocation();
+  const navigate = useNavigate();
+
+const navigator = () =>{
+  navigate('/agendamento')
+}
 
 
-    return (
-        <div className="container-general">
+useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/psychologists/${location.state.id}`);
+        const data = response.data;
+        setDados({
+          username: data.username,
+          description: data.description,
+          imagem: data.imagem
+        });
+      } catch (error) {
+        console.error('Erro na requisição GET:', error.message);
+      }
+    };
 
-                <span className="out-arrow">
-                    <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
-                </span>
-              <ul className="research-list">
-                <li className='PsychologistResearch'>
-                    <div className="card-research">
-                      <span className="informations">
-                        <label htmlFor="name">{dados.nome}</label>
-                        <input 
-                          type="text" 
-                          name="nome"
-                          placeholder="Nome"
-                          value=''
-                          onChange=''
-                        />
-                        <div className='row-2'>
-                        <label htmlFor="description">{dados.description}</label>
-                          <input 
-                            type="text"
-                            name="descricao"
-                            placeholder="Descrição"
-                            value=""
-                            onChange=""
-                          
-                          />
-                          <div className='avalietions'>
-                            <img src="src/assets/estrela.png" alt="estrela" />
-                            <span className='number-views'></span>
-                          </div>
-                        </div>
-                      </span>
-                      <div className="photo">
-                        <img src={dados.imagem} alt="foto" />
-                      </div>
-                    </div>
-                </li>
-              </ul>
-
-        </div>
-        
-        )
-
+    fetchData();
+  }, [location.state.id]);
+  return (
+    <>
+      <span className='banner-pages'>
+        <img src="src/assets/dermatologia.webp" alt="" />
+      </span>
+      <div className="container-general">
+        <span className="out-arrow">
+          <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
+        </span>
+        <ul className="research-list">
+          <li className='PsychologistResearch'>
+            <div className="card-research">
+              <span className="informations">
+                <label htmlFor="name">Nome do especialista</label>
+                <input
+                  type="text"
+                  name="name" // Correção: atribuir um nome fixo ao campo
+                  placeholder={dados.username}
+                  value={dados.username} />
+                <div className='row-2'>
+                  <span>
+                    <label htmlFor="description">Breve descrição</label>
+                    <input
+                      type="text"
+                      name="description" // Correção: atribuir um nome fixo ao campo
+                      placeholder={dados.description}
+                      value="isso e um descrição"
+                      />
+                  </span>
+                  <div className='avalietions'>
+                    <img src="src/assets/estrela.png" alt="estrela" />
+                    <span className='number-views'></span>
+                  </div>
+                </div>
+              </span>
+              <div className="photo">
+                <img src={dados.imagem} alt="foto" /> {/* Correção: Removendo as chaves desnecessárias */}
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </>
+  );
 }
 
 export default PsychologistResearch;

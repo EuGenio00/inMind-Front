@@ -1,165 +1,141 @@
-import { useState, useEffect } from 'react';
-import './AppointmentPsychologist.css'
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
+import './AppointmentPsychologist.css';
 
 const AppointmentPsychologist = () => {
-    const [showText, setShowText] = useState(true);
-/*     const [photoUrl, setPhotoUrl] = useState(''); */
-    /* const [file, setFile] = useState(null); */
-    const [formData, setFormData] = useState({
-      appointmentDate: ''
-    });
-    const [dados, setDados] = useState ({
-      nome: '',
-      description: '',
-      imagem: ''
-    })
+  const [showText, setShowText] = useState(true);
+  const [formData, setFormData] = useState({
+    appointmentDate: '',
+    name: '',
+    age: '',
+    description: ''
+  });
+  const [dados, setDados] = useState({
+    username: '',
+    description: '',
+    imagem: ''
+  });
 
-    const handlePhotoClick = () => {
-        setShowText(false);
-    };
+  const location = useLocation();
 
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await fetch ('http://localhost:');
-          
-          if (!response.ok) {
-            throw new Error('Algo deu errado com o Get')
-          }
-
-          const data = await response.json();
-
-          setDados({
-            nome: data.nome,
-            description: data.description,
-            imagem: data.img
-          });
-        } catch (error) {
-          console.error('Erro ao obter os dados (na requisiçãp):', error.message);
-        }
-      }
-
-      fetchData();
-    
-    }, [])
-
-/*     const handleFileChange = (event) => {
-      const selectedFile = event.target.files[0];
-  
-      if (selectedFile) {
-        setFile(selectedFile);
-  
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          setPhotoUrl(reader.result);
-        };
-  
-        reader.readAsDataURL(selectedFile);
-      }
-    }; */
-    const handleInputChange = (event) => {
-      const { name, value } = event.target;
-      setFormData({
-        ...formData,
-        [name]: value
-      });
-    };
-
-    const uploadAppointment = async () => {
+  useEffect(() => {
+    const fetchData = async () => {
       try {
-        const uploadData = new FormData();
-        uploadData.append('appointmentDate', formData.appointmentDate);
-  
-        const response = await fetch(`http://localhost:8080/schedulings`, {
-          method: 'POST',
-          headers: {
-            'accept': '*/*',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(),
+        const response = await axios.get(`http://localhost:8080/psychologists/1`);
+        const data = response.data;
+        setDados({
+          username: data.username,
+          description: data.description,
+          imagem: data.imagem
         });
-  
-        if (response.data.success) {
-          console.log('agendamento bazou!');
-          return response.ok;
-        } else {
-          console.error('Falha no agendamento.');
-          return false
-        }
       } catch (error) {
-        console.error('Erro ao enviar os dados:', error);
+        console.error('Erro na requisição GET:', error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handlePhotoClick = () => {
+    setShowText(false);
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const uploadAppointment = async () => {
+    try {
+      const uploadData = new FormData();
+      uploadData.append('appointmentDate', formData.appointmentDate);
+
+      const response = await fetch(`http://localhost:8080/schedulings`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(Object.fromEntries(uploadData)),
+      });
+
+      const responseData = await response.json();
+
+      if (responseData.success) {
+        console.log('Agendamento realizado com sucesso!');
+        return response.ok;
+      } else {
+        console.error('Falha no agendamento.');
         return false;
       }
-    };
+    } catch (error) {
+      console.error('Erro ao enviar os dados:', error);
+      return false;
+    }
+  };
 
-
-    return (
-        <div className="container-general AppointmentPsychologist">
-
-          <div className="research-list">
-            <span className="out-arrow">
-                <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
-            </span>
-            <div className="card-research">
-              <div className="children">
-                <span className="informations">
-                  <div className='input-agendamento'>
-                  <label htmlFor="name">{dados.nome}</label>
-                  <input 
-                    type="text" 
-                    name="name"
-                    placeholder="Nome"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                  />
-                  <label htmlFor="age">Idade:</label>
-                  <input
-                    type="text" 
-                    name="age"
-                    placeholder="Idade"
-                    value={formData.age}
-                    onChange={handleInputChange}
-                  
-                  />
-                  </div>
-                  {showText && <p onClick={handlePhotoClick}>Foto</p>}
-                  {!showText && (
-                    <img src={dados.imagem} alt='imagem' />
-                  )}
-                </span>
-                <span className="informations">
-                <div className='input-description'>
-                  <label htmlFor="description">{dados.description}</label>
-                  <textarea
-                    name="description"
-                    placeholder="Descrição"
-                    value={formData.description}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className='input-appointmentDate'>
-                  <label htmlFor="appointmentDate">Data de agendamento:</label>
-                  <input
-                    type="text" 
-                    name="appointmentDate"
-                    placeholder="dd/mm/aaaa"
-                    value={formData.appointmentDate}
-                    onChange={handleInputChange}
-                  
-                  />
-                </div>
-                <button onClick={uploadAppointment}>Finalizar o agendamento</button>
-                </span>
-                  
+  return (
+    <div className="container-general AppointmentPsychologist">
+      <div className="research-list">
+        <span className="out-arrow">
+          <a href="/home"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
+        </span>
+        <div className="card-research">
+          <div className="children">
+            <span className="informations">
+              <div className='input-agendamento'>
+                <label htmlFor="name">{dados.username}</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nome"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="age">Idade:</label>
+                <input
+                  type="text"
+                  name="age"
+                  placeholder="Idade"
+                  value={formData.age}
+                  onChange={handleInputChange}
+                />
               </div>
-            </div>
+              {showText && <p onClick={handlePhotoClick}>Foto</p>}
+              {!showText && (
+                <img src={dados.imagem} alt='imagem' />
+              )}
+            </span>
+            <span className="informations">
+              <div className='input-description'>
+                <label htmlFor="description">{dados.description}</label>
+                <textarea
+                  name="description"
+                  placeholder="Descrição"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className='input-appointmentDate'>
+                <label htmlFor="appointmentDate">Data de agendamento:</label>
+                <input
+                  type="text"
+                  name="appointmentDate"
+                  placeholder="dd/mm/aaaa"
+                  value={formData.appointmentDate}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <button onClick={uploadAppointment}>Finalizar o agendamento</button>
+            </span>
           </div>
-
         </div>
-        
-        )
+      </div>
+    </div>
+  );
+};
 
-}
-
-export default AppointmentPsychologist
+export default AppointmentPsychologist;

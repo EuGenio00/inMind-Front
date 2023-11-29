@@ -1,9 +1,35 @@
 import "./SearchBar.css";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const SearchBar = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+
+
+  const quandoPesquisar = async () => {
+    debugger;
+    try {
+      const response = await axios.get(`http://localhost:8080/psychologists`);
+      console.log(response.data);
+  
+      let userFilter = response.data.filter(function(item) {
+        return item.username === searchTerm; // Correção: usar a propriedade correta para a comparação
+      });
+  
+      if (userFilter.length > 0) {
+        var id = userFilter[0].id;
+        navigate('/pesquisar-psicologo', { state: { id: id } });
+      } else {
+        console.log("Nenhum psicólogo encontrado com esse nome.");
+        // Adicione aqui a lógica para lidar com nenhum resultado encontrado
+      }
+    } catch (error) {
+      console.error("Erro ao pesquisar psicólogos:", error);
+    }
+  };
 
   useEffect(() => {
     // Simulação de uma chamada à API quando o termo de pesquisa muda
@@ -36,6 +62,7 @@ const SearchBar = () => {
         value={searchTerm}
         onChange={handleInputChange}
       />
+      <button onClick={quandoPesquisar} >pesquisar</button>
 
       <ul>
         {searchResults.map((result) => (

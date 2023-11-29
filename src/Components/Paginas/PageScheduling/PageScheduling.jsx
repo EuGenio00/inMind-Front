@@ -5,30 +5,25 @@ import { useState, useEffect } from 'react';
 const Scheduling = () => {
 
   const [dados, setDados] = useState ({
-    nome: '',
+    username: '',
     dataTime: '',
     imagem: ''
   })
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch ('http://localhost:');
-        
-        if (!response.ok) {
-          throw new Error('Algo deu errado com o Get')
+
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8080/psychologists/${location.state.id}`);
+          const data = response.data;
+          setDados({
+            username: data.username,
+            dataTime: data.dataTime,
+            imagem: data.imagem
+          });
+        } catch (error) {
+          console.error('Erro na requisição GET:', error.message);
         }
-
-        const data = await response.json();
-
-        setDados({
-          nome: data.nome,
-          dataTime: data.dataTime,
-          imagem: data.img
-        });
-      } catch (error) {
-        console.error('Erro ao obter os dados (na requisiçãp):', error.message);
-      }
-    }
+      };
 
     fetchData();
   
@@ -40,7 +35,7 @@ const Scheduling = () => {
       <div className="container-general">
 
           <span className="out-arrow">
-              <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
+              <a href="/home"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
           </span>
           <ul className="research-list">
             <li className="Scheduling">

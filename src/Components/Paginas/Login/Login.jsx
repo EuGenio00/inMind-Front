@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import Botao from "../../Button/Button";
 import ImageLogo from "../../ImageLogo/ImageLogo";
@@ -8,14 +8,18 @@ import axios from "axios";
 import Menu from "../../Menu/Menu";
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
   const aoEnviar = async (evento) => {
     evento.preventDefault();
 
     var data = incluir().then((result) => {
       if (result) {
-        toast.success("Registro cadastrado com sucesso.");
+        toast.success("Login efetuado com sucesso.");
+        navigate('/home');
       } else {
-        toast.error("Ocorreu um erro, tente novamente mais tarde!");
+        toast.error("Ocorreu um erro, tente novamente!");
       }
     });
   };
@@ -59,7 +63,7 @@ const Login = () => {
               </h2>
               <form action="" onSubmit={aoEnviar}>
                 <input id="username" placeholder="Username" />
-                <input id="password" type="password" placeholder="*Senha: " />
+                <input id="password" type="password" placeholder="Senha: " />
                 <Botao textoBotao="Entrar" />
               </form>
               <p>
