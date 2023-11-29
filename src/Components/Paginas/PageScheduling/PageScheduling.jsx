@@ -5,35 +5,37 @@ import { useState, useEffect } from 'react';
 const Scheduling = () => {
 
   const [dados, setDados] = useState ({
-    nome: '',
-    dataConsulta: '',
+    username: '',
+    dataTime: '',
+    imagem: ''
   })
   useEffect(() => {
-    try {
+
+      const fetchData = async () => {
+        try {
           const response = await axios.get(`http://localhost:8080/psychologists/${location.state.id}`);
           const data = response.data;
-        setDados({
-          nome: data.username,
-          dataConsulta: data.appointmentTime
-        });
-      })
-      .catch(error => {
-        console.error('Erro na requisição GET:', error);
-      })
+          setDados({
+            username: data.username,
+            dataTime: data.dataTime,
+            imagem: data.imagem
+          });
+        } catch (error) {
+          console.error('Erro na requisição GET:', error.message);
+        }
+      };
 
-    } catch (error) {
-      console.error('Erro ao rodar o codigo:', error.message);
-    }
+    fetchData();
   
   }, [])
 
-    return (
+ return (
       <>
         <span className='banner-pages'>
           <img src="src/assets/dermatologia.webp" alt="" />
         </span><div className="container-general">
             <span className="out-arrow">
-              <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
+              <a href="/home"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
             </span>
             <ul className="research-list">
               <li className="Scheduling">
@@ -63,5 +65,6 @@ const Scheduling = () => {
       )
 
 }
+
 
 export default Scheduling;

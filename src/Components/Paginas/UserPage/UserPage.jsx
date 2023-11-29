@@ -18,7 +18,7 @@ const UserPage = () => {
   const fetchData = async () => {
     try {
       // eslint-disable-next-line no-undef
-      const response = await axios.get(`http://localhost:8080/users${id}`);
+      const response = await axios.get(`http://localhost:8080/psychologists/1`);
       setData(response.data); // Partindo da lógica que setando o id do usuário, nos trará todas as informações do mesmo que precisamos
     } catch (error) {
       console.error('Erro ao buscar dados:', error);
@@ -71,7 +71,7 @@ const UserPage = () => {
           <img src="src/assets/dermatologia.webp" alt="" />
         </span><div className="container-general">
             <span className="out-arrow">
-              <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
+              <a href="/home"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
             </span>
             <ul className="research-list userPage">
               <li className="users">

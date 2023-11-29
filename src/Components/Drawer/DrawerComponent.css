@@ -38,6 +38,11 @@
   padding: 12px;
 }
 
-.itens-drawer ul{
+.itens-drawer ul a{
+  width: 100%;
   font-family: 'IBM Plex Mono', monospace !important;
+}
+
+.itens-drawer ul a:hover{
+  background-color: #c8edeb;
 }

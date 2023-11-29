@@ -56,13 +56,13 @@ const DrawerComponent = () => {
           <div className="itens-drawer">
             <List>
               <ListItem button>
-                <ListItemText primary="Item 1" />
+               <a href="/consulta-aceita">Consulta aceita</a>
               </ListItem>
               <ListItem button>
-                <ListItemText primary="Item 2" />
+                <a href="/agendados">Agendamentos</a>
               </ListItem>
               <ListItem button>
-                <ListItemText primary="Item 3" />
+                <a href="/pesquisar-psicologo">Pesquise o psicologo</a>
               </ListItem>
             </List>
           </div>

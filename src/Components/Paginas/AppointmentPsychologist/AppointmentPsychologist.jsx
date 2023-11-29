@@ -86,7 +86,7 @@ const AppointmentPsychologist = () => {
 
         <div className="research-list">
           <span className="out-arrow">
-            <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
+            <a href="/home"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
           </span>
           <div className="card-research">
             <div className="children">

@@ -3,6 +3,7 @@ import "./Calendar.css";
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { useNavigate } from "react-router-dom";
 
 const CalendarComponent = () => {
   const [date, setDate] = useState(new Date());
@@ -35,13 +36,20 @@ const CalendarComponent = () => {
     setMeetingLink(event.target.value);
   };
 }*/
+
+const navigator = useNavigate();
+
   const scheduleMeeting = () => {
+      navigator('/agendados')
     console.log("Data e Hora:", date);
     // console.log("Link do Google Meet:", meetingLink);
   };
 
   return (
     <div>
+      <span className='banner-pages'>
+          <img src="src/assets/dermatologia.webp" alt="" />
+        </span>
       <h2>Acompanhe o seu agendamento no Calendário</h2>
       <div className="calendar-content">
         <label>Data:</label>
