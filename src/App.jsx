@@ -10,6 +10,8 @@ import Scheduling from "./Components/Paginas/PageScheduling/PageScheduling";
 import ConsulationPage from "./Components/Paginas/ConsultationPage/ConsultationPage";
 import PacienteCadastro from "./Components/Paginas/Cadastro/PacienteCadastro/PacienteCadastro";
 import PsicologoCadastro from "./Components/Paginas/Cadastro/PsicologoCadastro/PsicologoCadastro";
+import UserPage from "./Components/Paginas/UserPage/UserPage";
+
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
                 path="/agendamento"
                 element={<AppointmentPsychologist />}
               />
+              <Route path="/pagina-usuario" element={<UserPage />} />
               <Route
                 path="/pesquisar-psicologo"
                 element={<PsychologistResearch />}

@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 import './PageScheduling.css'
 import { useState, useEffect } from 'react';
 
@@ -6,70 +6,63 @@ const Scheduling = () => {
 
   const [dados, setDados] = useState ({
     nome: '',
-    dataTime: '',
-    imagem: ''
+    dataConsulta: '',
   })
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch ('http://localhost:');
-        
-        if (!response.ok) {
-          throw new Error('Algo deu errado com o Get')
-        }
-
-        const data = await response.json();
-
+    try {
+      axios.get('http://localhost:8080/psychologists')
+      .then(response => {
+        const data = response.json();
         setDados({
-          nome: data.nome,
-          dataTime: data.dataTime,
-          imagem: data.img
+          nome: data.username,
+          dataConsulta: data.appointmentTime
         });
-      } catch (error) {
-        console.error('Erro ao obter os dados (na requisiçãp):', error.message);
-      }
-    }
+      })
+      .catch(error => {
+        console.error('Erro na requisição GET:', error);
+      })
 
-    fetchData();
+    } catch (error) {
+      console.error('Erro ao rodar o codigo:', error.message);
+    }
   
   }, [])
 
 
 
     return (
-      <div className="container-general">
-
-          <span className="out-arrow">
+      <>
+        <span className='banner-pages'>
+          <img src="src/assets/dermatologia.webp" alt="" />
+        </span><div className="container-general">
+            <span className="out-arrow">
               <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
-          </span>
-          <ul className="research-list">
-            <li className="Scheduling">
-              <div className="card-research">
-                <span className="informations">
-                  <label htmlFor="nome">{dados.nome}</label>
-                  <input 
-                    type="text" 
-                    name="nome"
-                    placeholder="Nome"
-                    value=''
-                    onChange=''/>
-                    <label htmlFor="date">{dados.dataTime}</label>
-                    <input 
+            </span>
+            <ul className="research-list">
+              <li className="Scheduling">
+                <div className="card-research">
+                  <span className="informations">
+                    <label htmlFor="nome">nome</label>
+                    <input
+                      type="text"
+                      name="nome"
+                      placeholder={dados.nome}
+                      value={dados.nome} />
+                    <label htmlFor="date">Data agendamento</label>
+                    <input
                       type="text"
                       name="descricao"
-                      placeholder="dd/mm/aaaa - 00:00"
-                      value=""
-                      onChange=""
-                    
-                    />
-                </span>
-                <div className="photo">
-                  <img src={dados.imagem} alt="foto" />
+                      placeholder={dados.dataConsulta == null ? 'DD/MM/AAAA' : dados.dataConsulta}
+                      value={dados.dataConsulta} />
+                  </span>
+                  <div className="photo">
+                    <img src='' alt="foto" />
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </div> 
+              </li>
+            </ul>
+          </div>
+        </> 
       )
 
 }

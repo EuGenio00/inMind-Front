@@ -1,0 +1,26 @@
+.colum{
+    height: auto;
+    
+}
+
+.userPage {
+    height: auto;
+}
+
+.userPage .informations {
+    height: auto;
+    border: none;
+}
+
+.colum-two .photo {
+    width: 50%;
+    margin: auto;
+}
+
+.excluir-conta{
+    color: red;
+}
+
+.excluir-conta:hover{
+    color: red;
+}

@@ -11,7 +11,8 @@
 
 .popup-content button {
   font-weight: 500;
-  background-color: #1a1a1a;
+  background-color: #fff;
+  border: 1px solid #009b87;
 }
 
 .popup-content button:hover{

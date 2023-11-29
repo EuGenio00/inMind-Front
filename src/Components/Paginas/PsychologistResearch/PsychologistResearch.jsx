@@ -1,82 +1,77 @@
-
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './PsychologistResearch.css'
 
+
 const PsychologistResearch = () => {
 
-      const [dados, setDados] = useState ({
-        nome: '',
-        description: '',
-        imagem: ''
-      })
+  const [dados, setDados] = useState ({
+    nome: '',
+    description: '',
+  })
       useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch ('http://localhost:');
-            
-            if (!response.ok) {
-              throw new Error('Algo deu errado com o Get')
-            }
-  
-            const data = await response.json();
-  
+        try {
+          axios.get('http://localhost:8080/psychologists')
+          .then(response => {
+            const data = response.json();
             setDados({
-              nome: data.nome,
-              description: data.description,
-              imagem: data.img
+              nome: data.username,
+              description: data.description
             });
-          } catch (error) {
-            console.error('Erro ao obter os dados (na requisiçãp):', error.message);
-          }
+          })
+          .catch(error => {
+            console.error('Erro na requisição GET:', error);
+          })
+    
+        } catch (error) {
+          console.error('Erro ao rodar o codigo:', error.message);
         }
-  
-        fetchData();
       
       }, [])
 
 
     return (
+      <>
+        <span className='banner-pages'>
+          <img src="src/assets/dermatologia.webp" alt="" />
+        </span>
         <div className="container-general">
-
-                <span className="out-arrow">
-                    <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
-                </span>
-              <ul className="research-list">
-                <li className='PsychologistResearch'>
-                    <div className="card-research">
-                      <span className="informations">
-                        <label htmlFor="name">{dados.nome}</label>
-                        <input 
-                          type="text" 
-                          name="nome"
-                          placeholder="Nome"
-                          value=''
-                          onChange=''
-                        />
-                        <div className='row-2'>
-                        <label htmlFor="description">{dados.description}</label>
-                          <input 
-                            type="text"
-                            name="descricao"
-                            placeholder="Descrição"
-                            value=""
-                            onChange=""
-                          
-                          />
-                          <div className='avalietions'>
-                            <img src="src/assets/estrela.png" alt="estrela" />
-                            <span className='number-views'></span>
-                          </div>
-                        </div>
+            <span className="out-arrow">
+              <a href="/"><img src="src/assets/seta-esquerda.png" alt="seta" /></a>
+            </span>
+            <ul className="research-list">
+              <li className='PsychologistResearch'>
+                <div className="card-research">
+                  <span className="informations">
+                    <label htmlFor="name">Nome do especialista</label>
+                    <input
+                      type="text"
+                      name={dados.nome}
+                      placeholder={dados.nome}
+                      value={dados.nome} />
+                    <div className='row-2'>
+                      <span>
+                        <label htmlFor="description">Breve descrição</label>
+                        <input
+                          type="text"
+                          name={dados.description}
+                          placeholder={dados.description} />
                       </span>
-                      <div className="photo">
-                        <img src={dados.imagem} alt="foto" />
+                      <div className='avalietions'>
+                        <img src="src/assets/estrela.png" alt="estrela" />
+                        <span className='number-views'></span>
                       </div>
                     </div>
-                </li>
-              </ul>
+                  </span>
+                  <div className="photo">
+                    <img src="{dados.imagem}" alt="foto" />
+                  </div>
+                </div>
+              </li>
+            </ul>
 
-        </div>
+          </div>
+        </>
         
         )
 
