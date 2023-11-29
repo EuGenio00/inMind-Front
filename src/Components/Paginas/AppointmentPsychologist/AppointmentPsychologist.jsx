@@ -135,4 +135,4 @@ const AppointmentPsychologist = () => {
 
 }
 
-export default AppointmentPsychologist
+export default AppointmentPsychologist;

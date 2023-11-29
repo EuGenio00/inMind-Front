@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import './PageScheduling.css'
 import { useState, useEffect } from 'react';
@@ -11,9 +10,8 @@ const Scheduling = () => {
   })
   useEffect(() => {
     try {
-      axios.get('http://localhost:8080/psychologists')
-      .then(response => {
-        const data = response.json();
+          const response = await axios.get(`http://localhost:8080/psychologists/${location.state.id}`);
+          const data = response.data;
         setDados({
           nome: data.username,
           dataConsulta: data.appointmentTime
