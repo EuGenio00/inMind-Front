@@ -14,3 +14,26 @@
     height: 40px;
     width: 245px;
 }
+
+.PsychologistResearch .informations{
+    padding: 7px 40px 7px 10px;
+    gap: 0;
+
+}
+
+.avalietions{
+    height: 100%;
+    display: flex;
+    align-items: end;
+    padding-bottom: 20px;
+}
+
+.PsychologistResearch .informations label{
+    display: flex;
+    padding-left: 9px;
+}
+
+.banner-pages img {
+    width: 100%;
+    height: auto;
+}

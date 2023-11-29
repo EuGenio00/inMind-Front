@@ -27,6 +27,25 @@
 
 }
 
+.Scheduling
+.informations{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #4e4351;
+    border-radius: 10px;
+    height: 125px;
+    width: 63%;
+    justify-content: flex-start;
+    padding: 4px 40px 8px 10px;
+    align-items: flex-start;
+    gap: 0;
+
+}
+
+.Scheduling .informations input {
+    width: 100%;
+}
+
 .research-list{
     padding: 0;
 }

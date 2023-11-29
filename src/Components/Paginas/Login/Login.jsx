@@ -19,7 +19,7 @@ const Login = () => {
         toast.success("Login efetuado com sucesso.");
         navigate('/home');
       } else {
-        toast.error("Ocorreu um erro, tente novamente!");
+        toast.error("Ocorreu um erro, tente novamente mais tarde!");
       }
     });
   };
