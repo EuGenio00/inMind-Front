@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 import './PageScheduling.css'
 import { useState, useEffect } from 'react';
@@ -27,8 +28,6 @@ const Scheduling = () => {
     }
   
   }, [])
-
-
 
     return (
       <>
