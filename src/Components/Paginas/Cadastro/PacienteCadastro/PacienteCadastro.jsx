@@ -21,7 +21,7 @@ const PacienteCadastro = () => {
   };
 
   async function incluir() {
-    debugger;
+
 
     var user = {
       username: document.getElementById("nome").value,
@@ -32,19 +32,19 @@ const PacienteCadastro = () => {
     };
 
     try {
-      debugger;
+  
       const response = await axios.post(`http://localhost:8080/patients`, user);
 
       console.log(user);
       if (response.status != 201) {
-        debugger;
+    
         return false;
       } else {
-        debugger;
+    
         return response.data;
       }
     } catch (error) {
-      debugger;
+  
       return false;
     }
   }

@@ -25,7 +25,7 @@ const Login = () => {
   };
 
   async function incluir() {
-    debugger;
+
 
     var user = {
       login: document.getElementById("username").value,
@@ -33,19 +33,19 @@ const Login = () => {
     };
 
     try {
-      debugger;
+  
       const response = await axios.post(`http://localhost:8080/login`, user);
 
       console.log(user);
       if (response.status != 201) {
-        debugger;
+    
         return false;
       } else {
-        debugger;
+    
         return response.data;
       }
     } catch (error) {
-      debugger;
+  
       return false;
     }
   }

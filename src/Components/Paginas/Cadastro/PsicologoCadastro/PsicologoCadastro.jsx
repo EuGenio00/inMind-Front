@@ -21,7 +21,7 @@ const PsicologoCadastro = () => {
   };
 
   async function incluir() {
-    debugger;
+
 
     var user = {
       username: document.getElementById("nome").value,
@@ -33,7 +33,7 @@ const PsicologoCadastro = () => {
     };
 
     try {
-      debugger;
+  
       const response = await axios.post(
         `http://localhost:8080/psychologists`,
         user
@@ -41,14 +41,14 @@ const PsicologoCadastro = () => {
 
       console.log(user);
       if (response.status != 201) {
-        debugger;
+
         return false;
       } else {
-        debugger;
+
         return response.data;
       }
     } catch (error) {
-      debugger;
+
       return false;
     }
   }
